@@ -18,19 +18,28 @@ public class Health : MonoBehaviour
         {
             if (value < health)
             {
-                OnDamage();
+                if (OnDamage != null)
+                {
+                    OnDamage();
+                }
             }
 
             if (value > health)
             {
-                OnHeal();
+                if (OnHeal != null)
+                { 
+                    OnHeal();
+                }
             }
 
             health = value;
             
             if (health < 0)
             {
-                OnDeath();
+                if (OnDeath != null)
+                {
+                    OnDeath();
+                }
             }
         }
     }
