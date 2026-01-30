@@ -1424,7 +1424,67 @@ PrefabInstance:
       objectReference: {fileID: 1451822874}
     - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
       propertyPath: cameraSpeed
-      value: 1.2
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[1].time
+      value: 0.87446487
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[1].value
+      value: 0.5847917
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[0].inSlope
+      value: 0.66874236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[1].inSlope
+      value: 1.5220807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[2].inSlope
+      value: 3.3075066
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[0].outSlope
+      value: 0.66874236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[1].inWeight
+      value: 0.070860334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[1].outSlope
+      value: 1.5220807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[2].outSlope
+      value: 3.3075066
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548636217265732241, guid: 5fa1311c97f82514794d4b79146258c2, type: 3}
+      propertyPath: cameraSpeedCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
