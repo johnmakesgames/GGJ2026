@@ -32,7 +32,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    Action OnDeath;
-    Action OnDamage;
-    Action OnHeal;
+    public Action OnDeath;
+    public Action OnDamage;
+    public Action OnHeal;
 }

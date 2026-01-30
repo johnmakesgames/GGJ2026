@@ -23,6 +23,9 @@ public class EnemyController2D : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         myCollider = this.GetComponent<Collider2D>();
         rb = this.GetComponent<Rigidbody2D>();
+
+        this.GetComponent<Health>().OnDamage += OnDamage;
+        this.GetComponent<Health>().OnDeath += OnDeath;
     }
 
     // Update is called once per frame
@@ -57,5 +60,17 @@ public class EnemyController2D : MonoBehaviour
     {
         Vector3 dirToPlayer = Vector3.Normalize(player.transform.position - this.transform.position);
         rb.AddForce(dirToPlayer * movementSpeed * Time.deltaTime);
+    }
+
+    void OnDamage()
+    {
+        // Do something maybe sound or flash or something
+    }
+
+    void OnDeath()
+    {
+        this.GetComponent<Health>().OnDamage -= OnDamage;
+        this.GetComponent<Health>().OnDeath -= OnDeath;
+        Destroy(this.gameObject);
     }
 }
