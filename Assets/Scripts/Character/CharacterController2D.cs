@@ -1,7 +1,10 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CharacterController : MonoBehaviour
+public class CharacterController2D : MonoBehaviour
 {
     [SerializeField]
     float movementSpeed;
@@ -20,17 +23,24 @@ public class CharacterController : MonoBehaviour
     InputAction sprintAction;
     InputAction sneakAction;
 
+    Rigidbody2D rb;
+
+
+    Vector3 lastFramePos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
         sneakAction = InputSystem.actions.FindAction("Crouch");
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        lastFramePos = transform.position;
+
         float thisFrameMoveSpeed = movementSpeed;
         movementDirection = moveAction.ReadValue<Vector2>();
 
@@ -44,6 +54,8 @@ public class CharacterController : MonoBehaviour
             thisFrameMoveSpeed += sneakModifier;
         }
 
-        this.transform.position += (movementDirection * thisFrameMoveSpeed * Time.deltaTime);
+        thisFrameMoveSpeed *= Time.deltaTime;
+
+        rb.AddForce(movementDirection * thisFrameMoveSpeed);
     }
 }
