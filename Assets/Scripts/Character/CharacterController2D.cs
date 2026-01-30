@@ -25,7 +25,6 @@ public class CharacterController2D : MonoBehaviour
 
     Rigidbody2D rb;
 
-
     Vector3 lastFramePos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
