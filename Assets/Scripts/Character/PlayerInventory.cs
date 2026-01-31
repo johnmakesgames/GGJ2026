@@ -123,30 +123,33 @@ public class PlayerInventory : MonoBehaviour
 
     public void UseItem(ItemTag item)
     {
-        switch (item)
+        if (playerStats)
         {
-            case ItemTag.ExtraOxygenTank:
-                if (HasItem(item))
-                {
-                    playerStats.CurrentOxygen += 50;
-                    RemoveItem(item);
-                }
-                break;
-            case ItemTag.Medkit:
-                if (HasItem(item))
-                {
-                    playerStats.CurrentHealth += 50;
-                    RemoveItem(item);
-                }
-                break;
-            case ItemTag.Can:
-            case ItemTag.Gear:
-            case ItemTag.Food:
-            case ItemTag.ScrapMetal:
-            case ItemTag.COUNT:
-            default:
-                Debug.Log("Attempted to use non-usable item");
-                break;
+            switch (item)
+            {
+                case ItemTag.ExtraOxygenTank:
+                    if (HasItem(item))
+                    {
+                        playerStats.CurrentOxygen += 50;
+                        RemoveItem(item);
+                    }
+                    break;
+                case ItemTag.Medkit:
+                    if (HasItem(item))
+                    {
+                        playerStats.CurrentHealth += 50;
+                        RemoveItem(item);
+                    }
+                    break;
+                case ItemTag.Can:
+                case ItemTag.Gear:
+                case ItemTag.Food:
+                case ItemTag.ScrapMetal:
+                case ItemTag.COUNT:
+                default:
+                    Debug.Log("Attempted to use non-usable item");
+                    break;
+            }
         }
     }
 }
