@@ -1,44 +1,34 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class WeaponController : MonoBehaviour 
+public class WeaponController : MonoBehaviour
 {
-
     public Transform weapon;
     public float maxDistance = 20f;
     public LayerMask hitMask;
 
+    private InputAction shootAction;
+
+    void Start()
+    {
+        shootAction = InputSystem.actions.FindAction("Attack");
+    }
+
     void Update()
     {
-        AimAtCursor();
-
-        if (Input.GetMouseButtonDown(0))
+        if (shootAction.ReadValue<float>() > 0)
+        {
             Shoot();
+        }
     }
-
-    void AimAtCursor()
-    {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePos - weapon.position).normalized;
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        weapon.rotation = Quaternion.Euler(0, 0, angle);
-    }
+    
 
     void Shoot()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePos - weapon.position).normalized;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        
+        Vector3 rayDirection = (mousePos - weapon.position).normalized;
 
-        RaycastHit2D hit = Physics2D.Raycast(weapon.position, direction, maxDistance, hitMask);
-
-        if (hit.collider != null)
-        {
-            Debug.Log("Hit: " + hit.collider.name);
-        }
+        Debug.DrawRay(weapon.position, rayDirection, Color.green);
     }
 }
-
-    
-    
-
-
