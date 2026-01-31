@@ -103,7 +103,7 @@ public class CharacterController2D : MonoBehaviour
 
             stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
 
-            Vector3 movement = movementDirection * thisFrameMoveSpeed;
+            Vector3 movement = movementDirection * thisFrameMoveSpeed * Time.deltaTime;
             rb.AddForce(movement);
             playerAnimationManager.SetLastFrameMovement(movement);
 
