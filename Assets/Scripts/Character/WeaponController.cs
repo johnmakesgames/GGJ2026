@@ -30,27 +30,17 @@ public class WeaponController : MonoBehaviour
 
     void Shoot()
     {
-        Plane aimPlane  = new Plane(Vector3.up, Vector3.zero);
-        
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-
-        float entryPoint;
-        Vector3 aimPoint;
-
-        if (aimPlane.Raycast(ray, out entryPoint))
+        var scrPoint = new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, 0);
+        Ray ray = Camera.main.ScreenPointToRay(scrPoint);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
         {
-            aimPoint = ray.GetPoint(entryPoint);
+            Vector3 hitPoint = hit.point;
+            Debug.DrawRay(Camera.main.transform.position, (hitPoint - Camera.main.transform.position), Color.red);
+
+            Vector3 origin = weapon.transform.position;
+            Vector3 direction = (hitPoint - origin).normalized;
+            Debug.DrawRay(origin, direction * maxDistance, Color.green);
         }
-        else
-        {
-            aimPoint = transform.position + transform.forward * 10f;
-        }
-        
-        Vector3 origin = weapon.transform.position;
-        Vector3 direction = (aimPoint - origin).normalized;
-        
-        
-        
-        Debug.DrawRay(origin, direction * maxDistance, Color.green);
     }
 }
