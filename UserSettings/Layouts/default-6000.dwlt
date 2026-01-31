@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 627
     height: 797
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 42
+  controlID: 43
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 43
+  controlID: 44
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 56}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 44
+  controlID: 45
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -748,7 +748,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Character
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -758,21 +758,22 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Character
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\GitRepos\GGJ2026\GGJ2026
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 95}
+    scrollPos: {x: 0, y: 79}
     m_SelectedIDs:
-    - m_Data: 50134
+    - m_Data: 50694
     m_LastClickedID:
-      m_Data: 50134
+      m_Data: 50694
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 49838
+    - m_Data: 49278
+    - m_Data: 49582
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -807,7 +808,7 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 49838
+    - m_Data: 49278
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -834,8 +835,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs:
+    - m_Data: 48892
+    m_LastClickedInstanceID: 48892
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 53626
@@ -909,19 +911,13 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: []
+      m_SelectedIDs:
+      - m_Data: 48892
       m_LastClickedID:
-        m_Data: 0
+        m_Data: 48892
       m_ExpandedIDs:
-      - m_Data: -5040
-      - m_Data: -5036
-      - m_Data: -4810
-      - m_Data: -4482
-      - m_Data: -4280
-      - m_Data: -3992
-      - m_Data: -2978
-      - m_Data: 50912
-      - m_Data: 51076
+      - m_Data: -1314
+      - m_Data: 49044
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1542,9 +1538,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.2199673, y: 3.0959003, z: -9.476732}
+    m_Target: {x: -4.2272706, y: -10.718413, z: 18.628906}
     speed: 2
-    m_Value: {x: -0.2199673, y: 3.0959003, z: -9.476732}
+    m_Value: {x: -4.2272706, y: -10.718413, z: 18.628906}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1590,9 +1586,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.482
   m_Rotation:
-    m_Target: {x: -0.24423073, y: 0.31495932, z: -0.08424698, w: -0.9132828}
+    m_Target: {x: -0.2881254, y: -0.11115289, z: 0.033672452, w: -0.9505392}
     speed: 2
-    m_Value: {x: -0.24546921, y: 0.3161967, z: -0.08508633, w: -0.9124281}
+    m_Value: {x: -0.28817132, y: -0.109725334, z: 0.033239733, w: -0.95069075}
   m_Size:
     m_Target: 14.019975
     speed: 2

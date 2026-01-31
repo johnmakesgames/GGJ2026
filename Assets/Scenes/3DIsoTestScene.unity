@@ -4084,9 +4084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd934cf88975ac34a8e4b97d80dbe1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
-  movementSpeed: 800
-  sprintModifier: 500
-  sneakModifier: -400
+  movementSpeed: 1000
+  sprintModifier: 600
+  sneakModifier: -500
   movementDirection: {x: 0, y: 0, z: 0}
 --- !u!222 &4653600319930133404
 CanvasRenderer:
@@ -4411,7 +4411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController2D
   player: {fileID: 0}
   maxViewDistance: 10
-  movementSpeed: 700
+  movementSpeed: 850
   touchDamage: 10
 --- !u!54 &7358850517099209276
 Rigidbody:
