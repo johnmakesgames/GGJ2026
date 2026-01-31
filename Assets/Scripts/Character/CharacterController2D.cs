@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngineInternal;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class CharacterController2D : MonoBehaviour
     InputAction moveAction;
     InputAction sprintAction;
     InputAction sneakAction;
+    InputAction interactionAction;
 
     PlayerStats stats;
     Rigidbody rb;
@@ -39,6 +41,7 @@ public class CharacterController2D : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
         sneakAction = InputSystem.actions.FindAction("Crouch");
+        interactionAction = InputSystem.actions.FindAction("Interact");
         stats = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody>();
     }
@@ -79,5 +82,18 @@ public class CharacterController2D : MonoBehaviour
         Vector3 movement = movementDirection * thisFrameMoveSpeed;
         rb.AddForce(movement);
         playerAnimationManager.SetLastFrameMovement(movement);
+
+        if (interactionAction.triggered)
+        {
+            Debug.DrawLine(transform.position, transform.position + (transform.forward * 100.0f), Color.red, 5.0f);
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
+            {
+                BaseMachine machineInteracted = hit.collider.gameObject.GetComponent<BaseMachine>();
+                if (machineInteracted)
+                {
+                    machineInteracted.UseMachine();
+                }
+            }
+        }
     }
 }
