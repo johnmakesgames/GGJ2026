@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
         {
             if (value < health)
             {
+                Debug.Log("Took damage");
+
                 if (OnDamage != null)
                 {
                     OnDamage();
@@ -26,6 +28,8 @@ public class Health : MonoBehaviour
 
             if (value > health)
             {
+                Debug.Log("Healed");
+
                 if (OnHeal != null)
                 { 
                     OnHeal();
@@ -33,7 +37,8 @@ public class Health : MonoBehaviour
             }
 
             health = value;
-            
+            Debug.Log($"Health now {health}");
+
             if (health < 0)
             {
                 if (OnDeath != null)
