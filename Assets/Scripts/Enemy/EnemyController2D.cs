@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController2D : MonoBehaviour
@@ -23,6 +25,11 @@ public class EnemyController2D : MonoBehaviour
     [SerializeField]
     PlayerAnimationManager playerAnimationManager;
 
+    [SerializeField]
+    SpriteRenderer spriteRenderer;
+
+    public bool isCured;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,14 +39,30 @@ public class EnemyController2D : MonoBehaviour
 
         this.GetComponent<Health>().OnDamage += OnDamage;
         this.GetComponent<Health>().OnDeath += OnDeath;
+
+        isCured = false;
     }
 
+    float counter = 0;
     // Update is called once per frame
     void Update()
     {
-        if (TestVisionToPlayer())
+        if (!isCured)
         {
-            MoveTowardsPlayer();
+            if (TestVisionToPlayer())
+            {
+                MoveTowardsPlayer();
+            }
+
+            counter += Time.deltaTime;
+            if (counter > 5.0f)
+            {
+                Cure();
+            }
+        }
+        else
+        {
+            MoveTowardsSaferoom();
         }
     }
 
@@ -71,6 +94,19 @@ public class EnemyController2D : MonoBehaviour
         playerAnimationManager.SetLastFrameMovement(totalFrameMovement);
     }
 
+    void MoveTowardsSaferoom()
+    {
+        Vector3 dirToSaferoom = Vector3.Normalize(new Vector3(0,this.transform.position.y,0) - this.transform.position);
+
+        Vector3 totalFrameMovement = dirToSaferoom * (movementSpeed * 1.5f) * Time.deltaTime;
+        rb.AddForce(totalFrameMovement);
+        playerAnimationManager.SetLastFrameMovement(totalFrameMovement);
+
+        Color newColor = spriteRenderer.color;
+        newColor.a -= 0.1f * Time.deltaTime;
+        spriteRenderer.color = newColor;
+    }
+
     void OnDamage()
     {
         // Do something maybe sound or flash or something
@@ -81,6 +117,25 @@ public class EnemyController2D : MonoBehaviour
         this.GetComponent<Health>().OnDamage -= OnDamage;
         this.GetComponent<Health>().OnDeath -= OnDeath;
         Destroy(this.gameObject);
+    }
+
+    private IEnumerator coroutine;
+    public void Cure()
+    {
+        isCured = true;
+        spriteRenderer.color = Color.white;
+        coroutine = KilLSelfOnceDurationPassed(10.0f);
+        player.GetComponent<PlayerStats>().SignalCured();
+        StartCoroutine(coroutine);
+    }
+
+    private IEnumerator KilLSelfOnceDurationPassed(float waitTime)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTime);
+            OnDeath();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
