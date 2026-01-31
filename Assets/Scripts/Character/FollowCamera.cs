@@ -9,6 +9,9 @@ public class FollowCamera : MonoBehaviour
     [SerializeField]
     float cameraSpeed;
 
+    [SerializeField]
+    AnimationCurve cameraSpeedCurve;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,7 +37,7 @@ public class FollowCamera : MonoBehaviour
 
             Vector3 dir = targetAdjustedZ - selfAdjustedZ;
 
-            this.transform.position += dir.normalized * diff * cameraSpeed * Time.deltaTime;
+            this.transform.position += dir.normalized * cameraSpeedCurve.Evaluate((1 - diff) * 10.0f) * cameraSpeed * Time.deltaTime;
         }
     }
 }
