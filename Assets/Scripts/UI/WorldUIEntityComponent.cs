@@ -35,12 +35,27 @@ public class WorldUIEntityComponent : MonoBehaviour
         m_CanvasGrp.alpha = alpha;
 
         m_AnimationTime += Time.deltaTime;
+
+        if(this.gameObject.activeSelf && !IsVisualActive())
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
-    public bool IsActive()
+    public bool AnimationsComplete()
     {
-        return m_CanvasGrp && m_CanvasGrp.alpha > 0 //is visible
-            || FadeCurve.length > 0 && FadeCurve.keys[FadeCurve.length - 1].time < m_AnimationTime; //Time elapsed fade curve
+         return FadeCurve.length == 0 || FadeCurve.keys[FadeCurve.length - 1].time < m_AnimationTime; //Time elapsed fade curve
+    }
+
+    public bool IsVisible()
+    {
+        return m_CanvasGrp && m_CanvasGrp.alpha > 0; //is visible
+    }
+
+    public bool IsVisualActive()
+    {
+        return IsVisible() //is visible
+            || !AnimationsComplete(); //Time elapsed fade curve
     }
 
     public void Enable()

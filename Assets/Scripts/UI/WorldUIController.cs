@@ -33,6 +33,7 @@ public class WorldUIController : MonoBehaviour
                 if (canvas)
                 {
                     canvas.worldCamera = worldCamera;
+                    canvas.renderMode = RenderMode.ScreenSpaceCamera;
                     canvas.renderMode = RenderMode.WorldSpace;
                 }
             }
@@ -43,7 +44,7 @@ public class WorldUIController : MonoBehaviour
     void Update()
     {
         //Check active lists (which could be empty)
-        var noLongerActiveElements = ActiveElements.FindAll(x => !x.IsActive()); //remove non-active ones
+        var noLongerActiveElements = ActiveElements.FindAll(x => !x.IsVisualActive() && !x.gameObject.activeSelf); //remove non-active ones
         foreach (var item in noLongerActiveElements)
         {
             ReturnToFreePool(item);
@@ -79,8 +80,6 @@ public class WorldUIController : MonoBehaviour
 
     private void ReturnToFreePool(WorldUIEntityComponent element)
     {
-        element.gameObject.SetActive(false);
-
         ActiveElements.Remove(element);
         FreeElements.Push(element);
     }
