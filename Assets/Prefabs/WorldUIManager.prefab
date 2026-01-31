@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 1269495288244597851}
   m_Layer: 5
   m_Name: WorldUIManager
-  m_TagString: Untagged
+  m_TagString: WorldUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
