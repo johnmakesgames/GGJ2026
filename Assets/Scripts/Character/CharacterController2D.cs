@@ -116,7 +116,7 @@ public class CharacterController2D : MonoBehaviour
                 BaseMachine machineInteracted = hit.collider.gameObject.GetComponent<BaseMachine>();
                 if (machineInteracted)
                 {
-                    machineInteracted.UseMachine();
+                    machineInteracted.UseMachine(null);
                 }
             }
         }

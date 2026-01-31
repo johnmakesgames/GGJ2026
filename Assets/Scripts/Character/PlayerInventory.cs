@@ -6,10 +6,13 @@ public enum ItemTag
 {
     ExtraOxygenTank,
     Can,
-    Gear,
+    Plant,
+    Gunpowder,
     Food,
     ScrapMetal,
     Medkit,
+    Ammo,
+    Slug,
     COUNT
 }
 
@@ -19,10 +22,13 @@ public class PlayerInventory : MonoBehaviour
     {
         { ItemTag.ExtraOxygenTank, 10 },
         { ItemTag.Can, 1 },
-        { ItemTag.Gear, 1 },
+        { ItemTag.Plant, 1 },
+        { ItemTag.Gunpowder, 1 },
         { ItemTag.Food, 2 },
         { ItemTag.ScrapMetal, 1 },
+        { ItemTag.Slug, 1 },
         { ItemTag.Medkit, 5 },
+        { ItemTag.Ammo, 0 },
         { ItemTag.COUNT, 0 },
     };
 
@@ -154,7 +160,7 @@ public class PlayerInventory : MonoBehaviour
                     }
                     break;
                 case ItemTag.Can:
-                case ItemTag.Gear:
+                case ItemTag.Gunpowder:
                 case ItemTag.Food:
                 case ItemTag.ScrapMetal:
                 case ItemTag.COUNT:
