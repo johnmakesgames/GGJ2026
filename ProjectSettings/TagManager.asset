@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HUD
   - PlayerUI
+  - WorldUI
   layers:
   - Default
   - TransparentFX

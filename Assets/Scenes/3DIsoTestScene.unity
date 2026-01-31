@@ -2588,7 +2588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3302502244997402670, guid: fbb88100cae210f43b3776767c053879, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: WorldUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

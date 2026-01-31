@@ -86,6 +86,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     OxygenBarControl playerStatsUI;
 
+    [SerializeField]
+    WorldUIController worldUIController;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -95,12 +98,24 @@ public class PlayerStats : MonoBehaviour
         CurrentHealth = StartingHealth;
 
         playerStatsUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<OxygenBarControl>();
+        worldUIController = GameObject.FindGameObjectWithTag("WorldUI").GetComponent<WorldUIController>();
     }
 
     void Update()
     {
         CurrentOxygen -= OxygenUsagePerSecond * Time.deltaTime;
-        CurrentHealth -= DamageOverTimePerSecond * Time.deltaTime;
+
+        TakeDamage(DamageOverTimePerSecond * Time.deltaTime);
+    }
+
+    void TakeDamage(float dmg)
+    {
+        CurrentHealth -= dmg;
+        if (worldUIController != null)
+        {
+            bool reuseDamageForSameSource = true;
+            worldUIController.ShowDamage(dmg, gameObject.transform.position, this.gameObject, reuseDamageForSameSource);
+        }
     }
 
     public void IncreaseMaxHealth(float increaseAmount, bool restoreToFull)
