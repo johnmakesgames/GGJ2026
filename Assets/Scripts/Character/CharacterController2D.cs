@@ -18,6 +18,9 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField]
     Vector3 movementDirection;
 
+    [SerializeField]
+    PlayerAnimationManager playerAnimationManager;
+
     // Movement inputs
     InputAction moveAction;
     InputAction sprintAction;
@@ -57,6 +60,8 @@ public class CharacterController2D : MonoBehaviour
 
         thisFrameMoveSpeed *= Time.deltaTime;
 
-        rb.AddForce(movementDirection * thisFrameMoveSpeed);
+        Vector3 movement = movementDirection * thisFrameMoveSpeed;
+        rb.AddForce(movement);
+        playerAnimationManager.SetLastFrameMovement(movement);
     }
 }
