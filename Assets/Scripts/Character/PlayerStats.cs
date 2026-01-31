@@ -29,6 +29,8 @@ public class PlayerStats : MonoBehaviour
         }
         set
         {
+            Debug.Log("Set player oxygen");
+
             if (value == oxygen)
             {
                 return;
@@ -64,7 +66,6 @@ public class PlayerStats : MonoBehaviour
                 return;
             }
 
-            Debug.Log("Set player health");
             if (value > MaximumHealth)
             {
                 healthComponent.CurrentHealth = MaximumHealth;

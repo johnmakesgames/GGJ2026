@@ -55,24 +55,27 @@ public class CharacterController2D : MonoBehaviour
         movementDirection.z = movementDirection.y;
         movementDirection.y = 0;
 
+        if (movementDirection.magnitude > 0)
+        {
+            thisFrameOxygenMod += 5;
+        }
 
         if (sprintAction.ReadValue<float>() > 0)
         {
             thisFrameMoveSpeed += sprintModifier;
+            thisFrameOxygenMod += 10;
         }
-        
+
         if (sneakAction.ReadValue<float>() > 0)
         {
             thisFrameMoveSpeed += sneakModifier;
+            thisFrameOxygenMod -= 3;
         }
 
         thisFrameMoveSpeed *= Time.deltaTime;
 
-        Debug.Log($"Dir Mag: {movementDirection.magnitude}");
-        Debug.Log($"Frame Move: {thisFrameMoveSpeed}");
-        Debug.Log($"Oxygen Scalar: {oxygenUseScalar}");
-        Debug.Log(movementDirection.magnitude * thisFrameMoveSpeed * oxygenUseScalar);
-        stats.OxygenUsagePerSecond = movementDirection.magnitude * thisFrameMoveSpeed * oxygenUseScalar;
+        stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
+
         Vector3 movement = movementDirection * thisFrameMoveSpeed;
         rb.AddForce(movement);
         playerAnimationManager.SetLastFrameMovement(movement);
