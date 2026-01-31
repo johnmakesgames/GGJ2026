@@ -478,4 +478,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   items: 
-  MaximumInventorySlots: 50
+  MaximumInventorySlots: 24

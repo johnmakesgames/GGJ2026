@@ -54,6 +54,10 @@ public class EnemyController2D : MonoBehaviour
             {
                 MoveTowardsPlayer();
             }
+            else
+            {
+                playerAnimationManager.SetLastFrameMovement(Vector3.zero);
+            }
         }
         else
         {
