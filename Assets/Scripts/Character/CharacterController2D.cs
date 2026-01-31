@@ -18,12 +18,19 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField]
     Vector3 movementDirection;
 
+    [SerializeField]
+    float oxygenUseScalar;
+
+    [SerializeField]
+    PlayerAnimationManager playerAnimationManager;
+
     // Movement inputs
     InputAction moveAction;
     InputAction sprintAction;
     InputAction sneakAction;
 
-    Rigidbody2D rb;
+    PlayerStats stats;
+    Rigidbody rb;
 
     Vector3 lastFramePos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,29 +39,45 @@ public class CharacterController2D : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
         sneakAction = InputSystem.actions.FindAction("Crouch");
-        rb = GetComponent<Rigidbody2D>();
+        stats = GetComponent<PlayerStats>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        float thisFrameOxygenMod = 0;
+
         lastFramePos = transform.position;
 
         float thisFrameMoveSpeed = movementSpeed;
         movementDirection = moveAction.ReadValue<Vector2>();
+        movementDirection.z = movementDirection.y;
+        movementDirection.y = 0;
+
+        if (movementDirection.magnitude > 0)
+        {
+            thisFrameOxygenMod += 5;
+        }
 
         if (sprintAction.ReadValue<float>() > 0)
         {
             thisFrameMoveSpeed += sprintModifier;
+            thisFrameOxygenMod += 10;
         }
-        
+
         if (sneakAction.ReadValue<float>() > 0)
         {
             thisFrameMoveSpeed += sneakModifier;
+            thisFrameOxygenMod -= 3;
         }
 
         thisFrameMoveSpeed *= Time.deltaTime;
 
-        rb.AddForce(movementDirection * thisFrameMoveSpeed);
+        stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
+
+        Vector3 movement = movementDirection * thisFrameMoveSpeed;
+        rb.AddForce(movement);
+        playerAnimationManager.SetLastFrameMovement(movement);
     }
 }

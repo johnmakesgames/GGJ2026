@@ -9,10 +9,16 @@ public class PlayerStats : MonoBehaviour
     float MaximumOxygen;
 
     [SerializeField]
+    public float OxygenUsagePerSecond;
+
+    [SerializeField]
     float StartingHealth;
 
     [SerializeField]
     float MaximumHealth;
+
+    [SerializeField]
+    public float DamageOverTimePerSecond;
 
     private float oxygen;
     public float CurrentOxygen
@@ -23,6 +29,13 @@ public class PlayerStats : MonoBehaviour
         }
         set
         {
+            Debug.Log("Set player oxygen");
+
+            if (value == oxygen)
+            {
+                return;
+            }
+
             if (value > MaximumOxygen)
             {
                 oxygen = MaximumOxygen;
@@ -48,7 +61,11 @@ public class PlayerStats : MonoBehaviour
         }
         set
         {
-            Debug.Log("Set player health");
+            if (value == CurrentHealth)
+            {
+                return;
+            }
+
             if (value > MaximumHealth)
             {
                 healthComponent.CurrentHealth = MaximumHealth;
@@ -77,7 +94,13 @@ public class PlayerStats : MonoBehaviour
         CurrentOxygen = StartingOxygen;
         CurrentHealth = StartingHealth;
 
-        playerStatsUI = GameObject.FindGameObjectWithTag("HUD").GetComponent<OxygenBarControl>();
+        playerStatsUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<OxygenBarControl>();
+    }
+
+    void Update()
+    {
+        CurrentOxygen -= OxygenUsagePerSecond * Time.deltaTime;
+        CurrentHealth -= DamageOverTimePerSecond * Time.deltaTime;
     }
 
     public void IncreaseMaxHealth(float increaseAmount, bool restoreToFull)

@@ -16,6 +16,11 @@ public class Health : MonoBehaviour
 
         set
         {
+            if (value == health)
+            {
+                return;
+            }
+
             if (value < health)
             {
                 Debug.Log("Took damage");
