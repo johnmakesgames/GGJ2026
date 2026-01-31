@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 842002977204625571}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.363, z: 0}
+  m_LocalPosition: {x: 0, y: 1.31, z: 0}
   m_LocalScale: {x: 0.99272007, y: 0.99272007, z: 0.99272007}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -3295015143210260946, guid: df22003c7107dd64bbe7394d4fe50553, type: 3}
+  m_Sprite: {fileID: -3781910019033479378, guid: 633716c7fc6018847ab042e66f9dff4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -324,9 +324,9 @@ GameObject:
   - component: {fileID: 4536943994796350043}
   - component: {fileID: 315348956052587728}
   - component: {fileID: 8757623941029435287}
-  - component: {fileID: 4661786768442173318}
   - component: {fileID: 220374690772147803}
   - component: {fileID: 6339247546046854624}
+  - component: {fileID: -8057156730865707075}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -367,7 +367,7 @@ MonoBehaviour:
   sprintModifier: 600
   sneakModifier: -500
   movementDirection: {x: 0, y: 0, z: 0}
-  oxygenUseScalar: 1
+  oxygenUseScalar: 0.1
   playerAnimationManager: {fileID: 1378450948409268977}
 --- !u!114 &315348956052587728
 MonoBehaviour:
@@ -383,25 +383,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   StartingOxygen: 100
   MaximumOxygen: 100
-  OxygenUsagePerSecond: 0
+  OxygenUsagePerSecond: 2
   StartingHealth: 100
   MaximumHealth: 100
   DamageOverTimePerSecond: 0
   playerStatsUI: {fileID: 0}
 --- !u!114 &8757623941029435287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347220884982020832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e2921063fd58645822e5f703a3ec3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  StartingHealth: 100
---- !u!114 &4661786768442173318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -464,3 +451,15 @@ CapsuleCollider:
   m_Height: 1.4227763
   m_Direction: 1
   m_Center: {x: -0.0073242844, y: 0.00080064574, z: 0}
+--- !u!114 &-8057156730865707075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347220884982020832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b81e7759fc3d3489fd1dd0a53b0d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPickupResponse
