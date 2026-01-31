@@ -15,6 +15,9 @@ public class EnemyController2D : MonoBehaviour
     [SerializeField]
     float movementSpeed;
 
+    [SerializeField]
+    float touchDamage;
+
     Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -72,5 +75,17 @@ public class EnemyController2D : MonoBehaviour
         this.GetComponent<Health>().OnDamage -= OnDamage;
         this.GetComponent<Health>().OnDeath -= OnDeath;
         Destroy(this.gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject == player)
+        {
+            Health playerHealth = player.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.CurrentHealth -= touchDamage;
+            }
+        }
     }
 }
