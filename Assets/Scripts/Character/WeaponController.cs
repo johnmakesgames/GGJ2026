@@ -41,6 +41,16 @@ public class WeaponController : MonoBehaviour
             Vector3 origin = weapon.transform.position;
             Vector3 direction = (hitPoint - origin).normalized;
             Debug.DrawRay(origin, direction * maxDistance, Color.green);
+
+            if (Physics.Raycast(origin, direction, out hit, maxDistance, hitMask))
+            {
+                var enemy =  hit.collider.GetComponent<EnemyController2D>();
+                
+            }
+            
+            
         }
     }
+
+    
 }
