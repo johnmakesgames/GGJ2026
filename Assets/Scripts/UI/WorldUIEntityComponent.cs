@@ -1,7 +1,10 @@
 using System;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class WorldUIEntityComponent : MonoBehaviour
 {
@@ -9,23 +12,35 @@ public class WorldUIEntityComponent : MonoBehaviour
     public TextMeshProUGUI Text;
     public RawImage Image;
 
+    //Circumstantial info
     private GameObject m_Source = null;
     private WorldUIController.WorldUIType m_WorldUIType = WorldUIController.WorldUIType.DamageEvent;
+
+    [SerializeField]
+    AnimationCurve FadeCurve;
+
+    float m_AnimationTime = 0;
+    CanvasGroup m_CanvasGrp = null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        m_CanvasGrp = GetComponent<CanvasGroup>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        var alpha = FadeCurve.Evaluate(m_AnimationTime);
+        m_CanvasGrp.alpha = alpha;
+
+        m_AnimationTime += Time.deltaTime;
     }
 
     public bool IsActive()
     {
-        return this.gameObject.activeSelf;
+        return m_CanvasGrp && m_CanvasGrp.alpha > 0 //is visible
+            || FadeCurve.length > 0 && FadeCurve.keys[FadeCurve.length - 1].time < m_AnimationTime; //Time elapsed fade curve
     }
 
     public void Enable()
@@ -59,5 +74,6 @@ public class WorldUIEntityComponent : MonoBehaviour
     void UpdateText(string text)
     {
         Text.SetText(text);
+        m_AnimationTime = 0;
     }
 }
