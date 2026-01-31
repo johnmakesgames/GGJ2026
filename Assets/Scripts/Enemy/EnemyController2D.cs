@@ -20,6 +20,9 @@ public class EnemyController2D : MonoBehaviour
 
     Rigidbody rb;
 
+    [SerializeField]
+    PlayerAnimationManager playerAnimationManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -62,7 +65,10 @@ public class EnemyController2D : MonoBehaviour
     void MoveTowardsPlayer()
     {
         Vector3 dirToPlayer = Vector3.Normalize(player.transform.position - this.transform.position);
-        rb.AddForce(dirToPlayer * movementSpeed * Time.deltaTime);
+
+        Vector3 totalFrameMovement = dirToPlayer * movementSpeed * Time.deltaTime;
+        rb.AddForce(totalFrameMovement);
+        playerAnimationManager.SetLastFrameMovement(totalFrameMovement);
     }
 
     void OnDamage()
