@@ -29,11 +29,14 @@ public class PlayerStats : MonoBehaviour
         }
         set
         {
-            Debug.Log("Set player oxygen");
-
             if (value == oxygen)
             {
                 return;
+            }
+            
+            if (oxygen == 0 && value > 0)
+            {
+                DamageOverTimePerSecond = 0;
             }
 
             if (value > MaximumOxygen)
@@ -43,6 +46,13 @@ public class PlayerStats : MonoBehaviour
             else
             {
                 oxygen = value;
+            }
+
+            // Once we're out of oxygen start taking our health down instead
+            if (oxygen < 0)
+            {
+                DamageOverTimePerSecond -= value;
+                oxygen = 0;
             }
 
             if (playerStatsUI != null)
@@ -86,6 +96,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     OxygenBarControl playerStatsUI;
 
+    [SerializeField]
+    WorldUIController worldUIController;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -95,12 +108,24 @@ public class PlayerStats : MonoBehaviour
         CurrentHealth = StartingHealth;
 
         playerStatsUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<OxygenBarControl>();
+        worldUIController = GameObject.FindGameObjectWithTag("WorldUI").GetComponent<WorldUIController>();
     }
 
     void Update()
     {
         CurrentOxygen -= OxygenUsagePerSecond * Time.deltaTime;
-        CurrentHealth -= DamageOverTimePerSecond * Time.deltaTime;
+
+        TakeDamage(DamageOverTimePerSecond * Time.deltaTime);
+    }
+
+    void TakeDamage(float dmg)
+    {
+        CurrentHealth -= dmg;
+        if (worldUIController != null)
+        {
+            bool reuseDamageForSameSource = true;
+            worldUIController.ShowDamage(dmg, gameObject.transform.position, this.gameObject, reuseDamageForSameSource);
+        }
     }
 
     public void IncreaseMaxHealth(float increaseAmount, bool restoreToFull)
