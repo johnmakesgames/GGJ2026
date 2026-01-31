@@ -31,6 +31,11 @@ public class PlayerStats : MonoBehaviour
             {
                 oxygen = value;
             }
+
+            if (playerStatsUI != null)
+            {
+                playerStatsUI.SetOxygenBarValue(CurrentOxygen, MaximumOxygen);
+            }
         }
     }
 
@@ -51,8 +56,16 @@ public class PlayerStats : MonoBehaviour
             {
                 healthComponent.CurrentHealth = value;
             }
+
+            if (playerStatsUI != null)
+            {
+                playerStatsUI.SetOxygenBarValue(CurrentHealth, MaximumHealth);
+            }
         }
     }
+
+
+    OxygenBarControl playerStatsUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,6 +74,8 @@ public class PlayerStats : MonoBehaviour
 
         CurrentOxygen = StartingOxygen;
         CurrentHealth = StartingHealth;
+
+        playerStatsUI = GameObject.FindGameObjectWithTag("HUD").GetComponent<OxygenBarControl>();
     }
 
     public void IncreaseMaxHealth(float increaseAmount, bool restoreToFull)
