@@ -45,7 +45,6 @@ public class PlayerInventory : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        items = new List<ItemTag>();
         playerStats = GetComponent<PlayerStats>();
     }
 
