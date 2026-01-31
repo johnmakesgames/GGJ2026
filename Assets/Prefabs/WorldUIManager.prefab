@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 3221392736469532931}
   - component: {fileID: 1269495288244597851}
   m_Layer: 5
-  m_Name: InWorldUIManager
+  m_Name: WorldUIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
