@@ -21,9 +21,21 @@ public class WorldUIController : MonoBehaviour
     void Start()
     {
         WorldUIElementPool = Object.FindObjectsByType<WorldUIEntityComponent>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        var worldCamera = Camera.main;
+
         foreach (var item in WorldUIElementPool)
         {
             FreeElements.Push(item);
+            if (worldCamera)
+            {
+                var canvas = item.gameObject.GetComponent<Canvas>();
+                if (canvas)
+                {
+                    canvas.worldCamera = worldCamera;
+                    canvas.renderMode = RenderMode.ScreenSpaceCamera;
+                    canvas.renderMode = RenderMode.WorldSpace;
+                }
+            }
         }
     }
 
@@ -44,13 +56,14 @@ public class WorldUIController : MonoBehaviour
         //look through active elements for a matching one
         if (reuseDamageForSameSource)
         {
-            foundElementForWorldUI = ActiveElements.FindLast(x => x.CanReuse(sourceOfDmg, WorldUIType.DamageEvent));
+           foundElementForWorldUI = ActiveElements.FindLast(x => x.CanReuse(sourceOfDmg, WorldUIType.DamageEvent));
         }
 
         if(foundElementForWorldUI == null)
         {
             if(FreeElements.TryPop(out foundElementForWorldUI))
             {
+                ActiveElements.Add(foundElementForWorldUI);
                 foundElementForWorldUI.gameObject.SetActive(true);
             }
         }
@@ -58,7 +71,7 @@ public class WorldUIController : MonoBehaviour
         //Can you really have no free UI elements....
         if(foundElementForWorldUI)
         {
-            foundElementForWorldUI.ShowWorldUI(dmg, position, sourceOfDmg, WorldUIType.DamageEvent);
+            foundElementForWorldUI.ShowWorldUI(dmg.ToString(), position, sourceOfDmg, WorldUIType.DamageEvent);
         }
 
         return foundElementForWorldUI; //Maybe someone can properly reuse this element

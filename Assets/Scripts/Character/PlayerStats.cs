@@ -121,7 +121,7 @@ public class PlayerStats : MonoBehaviour
     void TakeDamage(float dmg)
     {
         CurrentHealth -= dmg;
-        if (worldUIController != null)
+        if (worldUIController != null && CurrentHealth > 0.0f && dmg != 0)
         {
             bool reuseDamageForSameSource = true;
             worldUIController.ShowDamage(dmg, gameObject.transform.position, this.gameObject, reuseDamageForSameSource);
