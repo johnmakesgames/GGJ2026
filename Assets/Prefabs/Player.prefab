@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3295015143210260946, guid: df22003c7107dd64bbe7394d4fe50553, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -367,7 +367,7 @@ MonoBehaviour:
   sprintModifier: 600
   sneakModifier: -500
   movementDirection: {x: 0, y: 0, z: 0}
-  oxygenUseScalar: 10
+  oxygenUseScalar: 1
   playerAnimationManager: {fileID: 1378450948409268977}
 --- !u!114 &315348956052587728
 MonoBehaviour:

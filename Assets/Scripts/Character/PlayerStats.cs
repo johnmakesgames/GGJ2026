@@ -99,7 +99,7 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        CurrentOxygen -= OxygenUsagePerSecond;
+        CurrentOxygen -= OxygenUsagePerSecond * Time.deltaTime;
         CurrentHealth -= DamageOverTimePerSecond * Time.deltaTime;
     }
 
