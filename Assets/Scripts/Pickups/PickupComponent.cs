@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ public class PickupComponent : MonoBehaviour
     [SerializeField]
     int pickupAmount = 1;
 
+    [SerializeField, Description("If the pickup type is set to item, this determines which item.")]
+    ItemTag pickupItem = ItemTag.COUNT;
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entered trigger");
@@ -16,7 +20,7 @@ public class PickupComponent : MonoBehaviour
         if (response != null)
         {
             Debug.Log("Is Player");
-            response.PickedUp(pickupType, pickupAmount);
+            response.PickedUp(pickupType, pickupAmount, pickupItem);
             Destroy(this.gameObject);
         }
     }
