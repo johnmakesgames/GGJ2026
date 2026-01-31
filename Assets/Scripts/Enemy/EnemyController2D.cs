@@ -10,7 +10,7 @@ public class EnemyController2D : MonoBehaviour
     [SerializeField]
     float maxViewDistance;
 
-    Collider2D myCollider;
+    Collider myCollider;
 
     [SerializeField]
     float movementSpeed;
@@ -18,14 +18,14 @@ public class EnemyController2D : MonoBehaviour
     [SerializeField]
     float touchDamage;
 
-    Rigidbody2D rb;
+    Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        myCollider = this.GetComponent<Collider2D>();
-        rb = this.GetComponent<Rigidbody2D>();
+        myCollider = this.GetComponent<Collider>();
+        rb = this.GetComponent<Rigidbody>();
 
         this.GetComponent<Health>().OnDamage += OnDamage;
         this.GetComponent<Health>().OnDeath += OnDeath;
@@ -77,7 +77,7 @@ public class EnemyController2D : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Colliding");
         if (collision.gameObject == player)
