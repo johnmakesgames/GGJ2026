@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ItemDropSpawner : MonoBehaviour
 {
+    GameObject[] pickupSpawns;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,8 +16,9 @@ public class ItemDropSpawner : MonoBehaviour
         
     }
 
-    public void DropRandomItemAtSpot()
+    public void DropRandomItemAtSpot(Transform transform)
     {
-
+        int randomSpawn = Random.Range(0, pickupSpawns.Length);
+        GameObject.Instantiate(pickupSpawns[randomSpawn], transform);
     }
 }

@@ -35,12 +35,6 @@ public class PlayerAnimationManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public bool CanMove()
     {
         return !animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.ToLower().Contains("shoot");
