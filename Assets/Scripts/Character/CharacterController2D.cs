@@ -46,6 +46,33 @@ public class CharacterController2D : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    Vector3 GetDiagonalOnlyMovementDirection(Vector2 movementInput)
+    {
+        Vector3 direction = Vector3.zero;
+
+        if (movementInput.y > 0.0f)
+        {
+            direction = new Vector3(-1, 0, 1);
+        }
+        
+        if (movementInput.y < 0.0f)
+        {
+            direction = new Vector3(1, 0, -1);
+        }
+
+        if (movementInput.x > 0.0f)
+        {
+            direction = new Vector3(1, 0, 1);
+        }
+
+        if (movementInput.x < 0.0f)
+        {
+            direction = new Vector3(-1, 0, -1);
+        }
+
+        return direction;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -54,9 +81,7 @@ public class CharacterController2D : MonoBehaviour
         lastFramePos = transform.position;
 
         float thisFrameMoveSpeed = movementSpeed;
-        movementDirection = moveAction.ReadValue<Vector2>();
-        movementDirection.z = movementDirection.y;
-        movementDirection.y = 0;
+        movementDirection = GetDiagonalOnlyMovementDirection(moveAction.ReadValue<Vector2>());
 
         if (movementDirection.magnitude > 0)
         {

@@ -15,6 +15,7 @@ public class PlayerAnimationManager : MonoBehaviour
     public void SetLastFrameMovement(Vector3 movement)
     {
         animator.SetFloat("MoveSpeed", movement.magnitude);
+        animator.SetFloat("MoveDirection", movement.z);
 
         if (movement.x > 0)
         {
