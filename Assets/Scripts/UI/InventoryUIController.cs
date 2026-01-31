@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class InventoryUIController : MonoBehaviour
 {
     InputAction OpenInventoryAction;
+
+    public GameObject InventoryItemUIPrefab;
+
     PlayerInventory PlayerInventory;
 
     bool Closing = false;
@@ -16,7 +19,14 @@ public class InventoryUIController : MonoBehaviour
         OpenInventoryAction.Enable();
 
         PlayerInventory = GameObject.FindAnyObjectByType<PlayerInventory>();
-        PlayerInventory.GetAllInventoryItems();
+        if (InventoryItemUIPrefab)
+        {
+            var items = PlayerInventory.GetAllInventoryItems();
+            foreach (var item in items)
+            {
+                Object.Instantiate(InventoryItemUIPrefab, this.gameObject.transform);
+            }
+        }
     }
 
     // Update is called once per frame
