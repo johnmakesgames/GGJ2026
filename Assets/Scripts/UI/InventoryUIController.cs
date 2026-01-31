@@ -19,7 +19,7 @@ public class InventoryUIController : MonoBehaviour
         OpenInventoryAction.Enable();
 
         PlayerInventory = GameObject.FindAnyObjectByType<PlayerInventory>();
-        if (InventoryItemUIPrefab)
+        if (InventoryItemUIPrefab && PlayerInventory)
         {
             var items = PlayerInventory.GetAllInventoryItems();
             foreach (var item in items)
