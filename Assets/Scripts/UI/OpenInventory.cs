@@ -6,6 +6,7 @@ public class OpenInventory : MonoBehaviour
 {
     InputAction OpenInventoryAction;
 
+    bool m_Loading = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,9 +16,19 @@ public class OpenInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OpenInventoryAction.ReadValue<float>() > 0)
+        if (OpenInventoryAction.IsPressed())
         {
             OpenInventoryScene();
+        }
+        else
+        {
+            if (!OpenInventoryAction.enabled)
+            {
+                if (!SceneManager.GetSceneByName("InventoryScene").isLoaded)
+                {
+                    OpenInventoryAction.Enable();
+                }
+            }
         }
     }
 
@@ -27,7 +38,8 @@ public class OpenInventory : MonoBehaviour
         bool isLoaded = SceneManager.GetSceneByName("InventoryScene").isLoaded;
         if (!isLoaded)
         {
-            SceneManager.LoadScene("InventoryScene", LoadSceneMode.Additive);
+            OpenInventoryAction.Disable();
+            SceneManager.LoadSceneAsync("InventoryScene", LoadSceneMode.Additive);
         }
     }
 }
