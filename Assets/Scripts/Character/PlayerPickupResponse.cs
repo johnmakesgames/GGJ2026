@@ -10,7 +10,7 @@ public class PlayerPickupResponse : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
     }
 
-    public void PickedUp(PickupTypes pickupType, int pickupAmount)
+    public void PickedUp(PickupTypes pickupType, int pickupAmount, ItemTag item)
     {
         switch (pickupType)
         {
@@ -40,6 +40,9 @@ public class PlayerPickupResponse : MonoBehaviour
                 break;
             case PickupTypes.IncreaseMaxAmmo:
                 Debug.LogWarning("No implementation for increase max Ammmo pickup");
+                break;
+            case PickupTypes.Item:
+                this.GetComponent<PlayerInventory>().TryAddItem(item);
                 break;
             default:
                 Debug.LogError($"Pickup default case entered for {pickupType.ToString()}");

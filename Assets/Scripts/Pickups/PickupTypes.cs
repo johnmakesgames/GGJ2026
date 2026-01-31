@@ -9,5 +9,6 @@ public enum PickupTypes
     IncreaseMaxHealth,
     IncreaseMaxOxygen,
     IncreaseMaxAmmo,
+    Item,
     COUNT
 }

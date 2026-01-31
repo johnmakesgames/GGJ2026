@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 220374690772147803}
   - component: {fileID: 6339247546046854624}
   - component: {fileID: -8057156730865707075}
+  - component: {fileID: 7206453869596347950}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -367,7 +368,7 @@ MonoBehaviour:
   sprintModifier: 600
   sneakModifier: -500
   movementDirection: {x: 0, y: 0, z: 0}
-  oxygenUseScalar: 0.1
+  oxygenUseScalar: 0.05
   playerAnimationManager: {fileID: 1378450948409268977}
 --- !u!114 &315348956052587728
 MonoBehaviour:
@@ -388,6 +389,7 @@ MonoBehaviour:
   MaximumHealth: 100
   DamageOverTimePerSecond: 0
   playerStatsUI: {fileID: 0}
+  worldUIController: {fileID: 0}
 --- !u!114 &8757623941029435287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,3 +465,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b81e7759fc3d3489fd1dd0a53b0d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPickupResponse
+--- !u!114 &7206453869596347950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347220884982020832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c7fc72fdce7a74da1a2b1fc004921e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  items: 
+  MaximumInventorySlots: 50

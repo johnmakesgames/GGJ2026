@@ -1,8 +1,6 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngineInternal;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -28,6 +26,7 @@ public class CharacterController2D : MonoBehaviour
     InputAction moveAction;
     InputAction sprintAction;
     InputAction sneakAction;
+    InputAction interactionAction;
 
     PlayerStats stats;
     Rigidbody rb;
@@ -39,8 +38,36 @@ public class CharacterController2D : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
         sneakAction = InputSystem.actions.FindAction("Crouch");
+        interactionAction = InputSystem.actions.FindAction("Interact");
         stats = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody>();
+    }
+
+    Vector3 GetDiagonalOnlyMovementDirection(Vector2 movementInput)
+    {
+        Vector3 direction = Vector3.zero;
+
+        if (movementInput.y > 0.0f)
+        {
+            direction = new Vector3(-1, 0, 1);
+        }
+        
+        if (movementInput.y < 0.0f)
+        {
+            direction = new Vector3(1, 0, -1);
+        }
+
+        if (movementInput.x > 0.0f)
+        {
+            direction = new Vector3(1, 0, 1);
+        }
+
+        if (movementInput.x < 0.0f)
+        {
+            direction = new Vector3(-1, 0, -1);
+        }
+
+        return direction;
     }
 
     // Update is called once per frame
@@ -51,9 +78,7 @@ public class CharacterController2D : MonoBehaviour
         lastFramePos = transform.position;
 
         float thisFrameMoveSpeed = movementSpeed;
-        movementDirection = moveAction.ReadValue<Vector2>();
-        movementDirection.z = movementDirection.y;
-        movementDirection.y = 0;
+        movementDirection = GetDiagonalOnlyMovementDirection(moveAction.ReadValue<Vector2>());
 
         if (movementDirection.magnitude > 0)
         {
@@ -72,12 +97,28 @@ public class CharacterController2D : MonoBehaviour
             thisFrameOxygenMod -= 3;
         }
 
-        thisFrameMoveSpeed *= Time.deltaTime;
+        if (playerAnimationManager.CanMove())
+        {
+            stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
 
-        stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
+            stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
 
-        Vector3 movement = movementDirection * thisFrameMoveSpeed;
-        rb.AddForce(movement);
-        playerAnimationManager.SetLastFrameMovement(movement);
+            Vector3 movement = movementDirection * thisFrameMoveSpeed * Time.deltaTime;
+            rb.AddForce(movement);
+            playerAnimationManager.SetLastFrameMovement(movement);
+
+            if (interactionAction.triggered)
+            {
+                Debug.DrawLine(transform.position, transform.position + (transform.forward * 100.0f), Color.red, 5.0f);
+                if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
+                {
+                    BaseMachine machineInteracted = hit.collider.gameObject.GetComponent<BaseMachine>();
+                    if (machineInteracted)
+                    {
+                        machineInteracted.UseMachine();
+                    }
+                }
+            }
+        }
     }
 }
