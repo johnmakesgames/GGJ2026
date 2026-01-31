@@ -93,6 +93,17 @@ public class PlayerInventory : MonoBehaviour
         return false;
     }
 
+    public bool TryAddItem(ItemTag item)
+    {
+        if (!HasRoomForItem(item))
+        {
+            return false;
+        }
+
+        items.Add(item);
+        return true;
+    }
+
     public bool RemoveItem(ItemTag item)
     {
         if (!items.Remove(item))
