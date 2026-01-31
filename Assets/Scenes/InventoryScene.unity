@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 2055144746}
   - component: {fileID: 2055144745}
   - component: {fileID: 2055144744}
+  - component: {fileID: 2055144747}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -400,6 +401,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055144742}
   m_CullTransparentMesh: 1
+--- !u!114 &2055144747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055144742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d84011b25ea104688cf8218df7f74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryUIController
+  InventoryItemUIPrefab: {fileID: 2572593448975450396, guid: 91f55485f8dfbbf419ede189291ded1b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

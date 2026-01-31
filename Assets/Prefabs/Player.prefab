@@ -368,7 +368,7 @@ MonoBehaviour:
   sprintModifier: 600
   sneakModifier: -500
   movementDirection: {x: 0, y: 0, z: 0}
-  oxygenUseScalar: 0.1
+  oxygenUseScalar: 0.05
   playerAnimationManager: {fileID: 1378450948409268977}
 --- !u!114 &315348956052587728
 MonoBehaviour:

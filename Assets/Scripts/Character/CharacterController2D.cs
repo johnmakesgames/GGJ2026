@@ -1,6 +1,3 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngineInternal;
@@ -100,23 +97,26 @@ public class CharacterController2D : MonoBehaviour
             thisFrameOxygenMod -= 3;
         }
 
-        thisFrameMoveSpeed *= Time.deltaTime;
-
-        stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
-
-        Vector3 movement = movementDirection * thisFrameMoveSpeed;
-        rb.AddForce(movement);
-        playerAnimationManager.SetLastFrameMovement(movement);
-
-        if (interactionAction.triggered)
+        if (playerAnimationManager.CanMove())
         {
-            Debug.DrawLine(transform.position, transform.position + (transform.forward * 100.0f), Color.red, 5.0f);
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
+            stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
+
+            stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
+
+            Vector3 movement = movementDirection * thisFrameMoveSpeed * Time.deltaTime;
+            rb.AddForce(movement);
+            playerAnimationManager.SetLastFrameMovement(movement);
+
+            if (interactionAction.triggered)
             {
-                BaseMachine machineInteracted = hit.collider.gameObject.GetComponent<BaseMachine>();
-                if (machineInteracted)
+                Debug.DrawLine(transform.position, transform.position + (transform.forward * 100.0f), Color.red, 5.0f);
+                if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
                 {
-                    machineInteracted.UseMachine(null);
+                    BaseMachine machineInteracted = hit.collider.gameObject.GetComponent<BaseMachine>();
+                    if (machineInteracted)
+                    {                   
+						machineInteracted.UseMachine(null);
+                    }
                 }
             }
         }
