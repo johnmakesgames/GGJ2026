@@ -20,7 +20,7 @@ public class PlayerAnimationManager : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
-        else
+        else if (movement.x < 0)
         {
             spriteRenderer.flipX = true;
         }
