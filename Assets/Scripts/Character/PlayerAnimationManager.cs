@@ -6,6 +6,7 @@ public class PlayerAnimationManager : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator animator;
     InputAction attackAction;
+    float timeSinceShot = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,10 +16,16 @@ public class PlayerAnimationManager : MonoBehaviour
         attackAction = InputSystem.actions.FindAction("Attack");
     }
 
+    public void SetIsPlayer(bool isPlayer)
+    {
+        animator.SetBool("IsPlayer", isPlayer);
+    }
+
     public void SetLastFrameMovement(Vector3 movement)
     {
         animator.SetFloat("MoveSpeed", movement.magnitude);
         animator.SetFloat("MoveDirection", movement.z);
+        animator.SetFloat("TimeSinceShot", timeSinceShot);
 
         if (movement.x > 0)
         {
@@ -29,10 +36,13 @@ public class PlayerAnimationManager : MonoBehaviour
             spriteRenderer.flipX = true;
         }
 
-        if (attackAction.ReadValue<float>() > 0.0f)
+        if (attackAction.ReadValue<float>() > 0.0f & timeSinceShot >= 0.5f)
         {
             animator.SetTrigger("Shoot");
+            timeSinceShot = 0;
         }
+
+        timeSinceShot += Time.deltaTime;
     }
 
     public bool CanMove()

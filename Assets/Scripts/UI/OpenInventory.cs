@@ -15,17 +15,20 @@ public class OpenInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OpenInventoryAction.IsPressed())
+        if (OpenInventoryAction != null)
         {
-            OpenInventoryScene();
-        }
-        else
-        {
-            if (!OpenInventoryAction.enabled)
+            if (OpenInventoryAction.IsPressed())
             {
-                if (!SceneManager.GetSceneByName("InventoryScene").isLoaded)
+                OpenInventoryScene();
+            }
+            else
+            {
+                if (!OpenInventoryAction.enabled)
                 {
-                    OpenInventoryAction.Enable();
+                    if (!SceneManager.GetSceneByName("InventoryScene").isLoaded)
+                    {
+                        OpenInventoryAction.Enable();
+                    }
                 }
             }
         }

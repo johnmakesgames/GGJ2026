@@ -16,10 +16,10 @@ public class OxygenMachine : BaseMachine
         
     }
 
-    public override void UseMachine()
+    public override bool UseMachine(object? contextObj)
     {
         if (GetNearbyPlayerGameObject() == null)
-            return;
+            return false;
 
         PlayerStats stats = GetNearbyPlayerGameObject().GetComponent<PlayerStats>();
 
@@ -29,5 +29,7 @@ public class OxygenMachine : BaseMachine
         }
 
         Debug.Log("OXYGEN OXYGEN OXYGEN BRR BRR BRR");
+
+        return true;
     }
 }

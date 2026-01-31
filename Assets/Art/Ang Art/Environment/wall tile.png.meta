@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: dea754591d3bdf741930332aa7cdb551
+guid: cd7a3e7d2a48ff74e85f3e67a14bc82b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -416313430304634665
-    second: Flat dirt_0
+      213: 6532278801722954893
+    second: wall tile_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -55,9 +55,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flat dirt_0
+      name: wall tile_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d8c77f0425f83af0800000000000000
-      internalID: -416313430304634665
+      spriteID: d84d28ee5f057aa50800000000000000
+      internalID: 6532278801722954893
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Flat dirt_0: -416313430304634665
+      wall tile_0: 6532278801722954893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

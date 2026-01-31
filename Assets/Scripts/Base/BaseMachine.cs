@@ -37,9 +37,9 @@ public class BaseMachine : MonoBehaviour
         return nearbyPlayerGameObject;
     }
 
-    public virtual void UseMachine()
+    public virtual bool UseMachine(object? contextObj)
     {
-
+        return false;
     }
 
     private void OnTriggerEnter(Collider other)
