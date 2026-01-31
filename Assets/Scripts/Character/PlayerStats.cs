@@ -48,6 +48,7 @@ public class PlayerStats : MonoBehaviour
         }
         set
         {
+            Debug.Log("Set player health");
             if (value > MaximumHealth)
             {
                 healthComponent.CurrentHealth = MaximumHealth;
@@ -59,12 +60,13 @@ public class PlayerStats : MonoBehaviour
 
             if (playerStatsUI != null)
             {
-                playerStatsUI.SetOxygenBarValue(CurrentHealth, MaximumHealth);
+                playerStatsUI.SetHealthBarValue(CurrentHealth, MaximumHealth);
             }
         }
     }
 
 
+    [SerializeField]
     OxygenBarControl playerStatsUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

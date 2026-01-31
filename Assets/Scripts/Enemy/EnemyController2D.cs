@@ -79,11 +79,15 @@ public class EnemyController2D : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Colliding");
         if (collision.gameObject == player)
         {
-            Health playerHealth = player.GetComponent<Health>();
+            Debug.Log("It is player");
+
+            PlayerStats playerHealth = player.GetComponent<PlayerStats>();
             if (playerHealth != null)
             {
+                Debug.Log("Player has health");
                 playerHealth.CurrentHealth -= touchDamage;
             }
         }

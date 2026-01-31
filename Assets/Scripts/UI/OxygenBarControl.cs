@@ -31,11 +31,11 @@ public class OxygenBarControl : MonoBehaviour
 
     public void SetOxygenBarValue(float value, float maxValue)
     {
-        OxygenSlider.value = value % maxValue;
+        OxygenSlider.value = (value / maxValue) * 100.0f;
     }
 
     public void SetHealthBarValue(float value, float maxValue)
     {
-        HealthSlider.value = value % maxValue;
+        HealthSlider.value = (value / maxValue) * 100.0f;
     }
 }
