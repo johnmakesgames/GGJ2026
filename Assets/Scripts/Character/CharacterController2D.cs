@@ -1,6 +1,3 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -97,12 +94,13 @@ public class CharacterController2D : MonoBehaviour
             thisFrameOxygenMod -= 3;
         }
 
-        thisFrameMoveSpeed *= Time.deltaTime;
+        if (playerAnimationManager.CanMove())
+        {
+            stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
 
-        stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
-
-        Vector3 movement = movementDirection * thisFrameMoveSpeed;
-        rb.AddForce(movement);
-        playerAnimationManager.SetLastFrameMovement(movement);
+            Vector3 movement = movementDirection * thisFrameMoveSpeed * Time.deltaTime;
+            rb.AddForce(movement);
+            playerAnimationManager.SetLastFrameMovement(movement);
+        }
     }
 }
