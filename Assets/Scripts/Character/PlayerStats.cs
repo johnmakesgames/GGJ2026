@@ -94,7 +94,7 @@ public class PlayerStats : MonoBehaviour
         CurrentOxygen = StartingOxygen;
         CurrentHealth = StartingHealth;
 
-        playerStatsUI = GameObject.FindGameObjectWithTag("HUD").GetComponent<OxygenBarControl>();
+        playerStatsUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<OxygenBarControl>();
     }
 
     void Update()

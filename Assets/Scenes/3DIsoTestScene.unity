@@ -695,6 +695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIHudCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2072814442796443144, guid: 11c7a23aa4830c64499e371ed8e7f715, type: 3}
+      propertyPath: m_TagString
+      value: PlayerUI
+      objectReference: {fileID: 0}
     - target: {fileID: 7220249781969069541, guid: 11c7a23aa4830c64499e371ed8e7f715, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2003,17 +2007,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032799904}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1073183641 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1689199741933015163, guid: 11c7a23aa4830c64499e371ed8e7f715, type: 3}
-  m_PrefabInstance: {fileID: 248386954}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35db8b92aebf1b64eaf34bb143dd640e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OxygenBarControl
 --- !u!1 &1246628884
 GameObject:
   m_ObjectHideFlags: 0
@@ -3569,7 +3562,7 @@ PrefabInstance:
     - target: {fileID: 315348956052587728, guid: e9a2944566f6782448096476d0697b4a, type: 3}
       propertyPath: playerStatsUI
       value: 
-      objectReference: {fileID: 1073183641}
+      objectReference: {fileID: 0}
     - target: {fileID: 315348956052587728, guid: e9a2944566f6782448096476d0697b4a, type: 3}
       propertyPath: OxygenUsagePerSecond
       value: 2
