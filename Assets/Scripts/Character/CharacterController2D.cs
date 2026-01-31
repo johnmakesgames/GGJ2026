@@ -101,21 +101,22 @@ public class CharacterController2D : MonoBehaviour
         {
             stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
 
-        stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
+            stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
 
-        Vector3 movement = movementDirection * thisFrameMoveSpeed;
-        rb.AddForce(movement);
-        playerAnimationManager.SetLastFrameMovement(movement);
+            Vector3 movement = movementDirection * thisFrameMoveSpeed;
+            rb.AddForce(movement);
+            playerAnimationManager.SetLastFrameMovement(movement);
 
-        if (interactionAction.triggered)
-        {
-            Debug.DrawLine(transform.position, transform.position + (transform.forward * 100.0f), Color.red, 5.0f);
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
+            if (interactionAction.triggered)
             {
-                BaseMachine machineInteracted = hit.collider.gameObject.GetComponent<BaseMachine>();
-                if (machineInteracted)
+                Debug.DrawLine(transform.position, transform.position + (transform.forward * 100.0f), Color.red, 5.0f);
+                if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
                 {
-                    machineInteracted.UseMachine();
+                    BaseMachine machineInteracted = hit.collider.gameObject.GetComponent<BaseMachine>();
+                    if (machineInteracted)
+                    {
+                        machineInteracted.UseMachine();
+                    }
                 }
             }
         }
