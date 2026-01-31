@@ -3615,6 +3615,22 @@ PrefabInstance:
       propertyPath: oxygenUseScalar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7206453869596347950, guid: e9a2944566f6782448096476d0697b4a, type: 3}
+      propertyPath: items.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206453869596347950, guid: e9a2944566f6782448096476d0697b4a, type: 3}
+      propertyPath: 'items.Array.data[1]'
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206453869596347950, guid: e9a2944566f6782448096476d0697b4a, type: 3}
+      propertyPath: 'items.Array.data[2]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206453869596347950, guid: e9a2944566f6782448096476d0697b4a, type: 3}
+      propertyPath: 'items.Array.data[3]'
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7347220884982020832, guid: e9a2944566f6782448096476d0697b4a, type: 3}
       propertyPath: m_Name
       value: Player
