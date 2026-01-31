@@ -10,6 +10,7 @@ public enum ItemTag
     Food,
     ScrapMetal,
     Medkit,
+    Cure,
     COUNT
 }
 
@@ -23,6 +24,7 @@ public class PlayerInventory : MonoBehaviour
         { ItemTag.Food, 2 },
         { ItemTag.ScrapMetal, 1 },
         { ItemTag.Medkit, 5 },
+        { ItemTag.Cure, 2 },
         { ItemTag.COUNT, 0 },
     };
 
@@ -151,6 +153,18 @@ public class PlayerInventory : MonoBehaviour
                     {
                         playerStats.CurrentHealth += 50;
                         RemoveItem(item);
+                    }
+                    break;
+                case ItemTag.Cure:
+                    if (HasItem(item))
+                    {
+                        GameObject curedGuy = GameObject.FindGameObjectsWithTag("Enemy").ToList().OrderBy(x => (x.transform.position - this.transform.position).magnitude).First();
+                        
+                        if (curedGuy != null)
+                        {
+                            curedGuy.GetComponent<EnemyController2D>().Cure();
+                            RemoveItem(item);
+                        }
                     }
                     break;
                 case ItemTag.Can:
