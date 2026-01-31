@@ -21,13 +21,16 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField]
     float oxygenUseScalar;
 
+    [SerializeField]
+    PlayerAnimationManager playerAnimationManager;
+
     // Movement inputs
     InputAction moveAction;
     InputAction sprintAction;
     InputAction sneakAction;
 
-    Rigidbody2D rb;
     PlayerStats stats;
+    Rigidbody rb;
 
     Vector3 lastFramePos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,8 +39,8 @@ public class CharacterController2D : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
         sneakAction = InputSystem.actions.FindAction("Crouch");
-        rb = GetComponent<Rigidbody2D>();
         stats = GetComponent<PlayerStats>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -49,6 +52,8 @@ public class CharacterController2D : MonoBehaviour
 
         float thisFrameMoveSpeed = movementSpeed;
         movementDirection = moveAction.ReadValue<Vector2>();
+        movementDirection.z = movementDirection.y;
+        movementDirection.y = 0;
 
 
         if (sprintAction.ReadValue<float>() > 0)
@@ -68,6 +73,8 @@ public class CharacterController2D : MonoBehaviour
         Debug.Log($"Oxygen Scalar: {oxygenUseScalar}");
         Debug.Log(movementDirection.magnitude * thisFrameMoveSpeed * oxygenUseScalar);
         stats.OxygenUsagePerSecond = movementDirection.magnitude * thisFrameMoveSpeed * oxygenUseScalar;
-        rb.AddForce(movementDirection * thisFrameMoveSpeed);
+        Vector3 movement = movementDirection * thisFrameMoveSpeed;
+        rb.AddForce(movement);
+        playerAnimationManager.SetLastFrameMovement(movement);
     }
 }
