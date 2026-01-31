@@ -1,6 +1,3 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngineInternal;
@@ -100,7 +97,9 @@ public class CharacterController2D : MonoBehaviour
             thisFrameOxygenMod -= 3;
         }
 
-        thisFrameMoveSpeed *= Time.deltaTime;
+        if (playerAnimationManager.CanMove())
+        {
+            stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
 
         stats.OxygenUsagePerSecond = thisFrameOxygenMod * oxygenUseScalar;
 
