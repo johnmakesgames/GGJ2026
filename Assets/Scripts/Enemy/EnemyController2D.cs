@@ -41,9 +41,10 @@ public class EnemyController2D : MonoBehaviour
         this.GetComponent<Health>().OnDeath += OnDeath;
 
         isCured = false;
+
+        playerAnimationManager.SetIsPlayer(false);
     }
 
-    float counter = 0;
     // Update is called once per frame
     void Update()
     {
@@ -52,12 +53,6 @@ public class EnemyController2D : MonoBehaviour
             if (TestVisionToPlayer())
             {
                 MoveTowardsPlayer();
-            }
-
-            counter += Time.deltaTime;
-            if (counter > 5.0f)
-            {
-                Cure();
             }
         }
         else

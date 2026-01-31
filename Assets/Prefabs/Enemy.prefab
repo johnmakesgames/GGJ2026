@@ -53,6 +53,8 @@ MonoBehaviour:
   movementSpeed: 850
   touchDamage: 10
   playerAnimationManager: {fileID: 7215483158346206221}
+  spriteRenderer: {fileID: 2431791382046400498}
+  isCured: 0
 --- !u!114 &5402114523032898609
 MonoBehaviour:
   m_ObjectHideFlags: 0
