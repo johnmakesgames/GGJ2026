@@ -43,12 +43,6 @@ public class PlayerInventory : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public List<ItemTag> GetAllInventoryItems()
     {
         return items;
