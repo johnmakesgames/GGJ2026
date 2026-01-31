@@ -92,6 +92,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    private int peopleCured;
 
     [SerializeField]
     OxygenBarControl playerStatsUI;
@@ -109,6 +110,8 @@ public class PlayerStats : MonoBehaviour
 
         playerStatsUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<OxygenBarControl>();
         worldUIController = GameObject.FindGameObjectWithTag("WorldUI").GetComponent<WorldUIController>();
+
+        peopleCured = 0;
     }
 
     void Update()
@@ -144,5 +147,10 @@ public class PlayerStats : MonoBehaviour
         {
             CurrentOxygen = MaximumHealth;
         }
+    }
+
+    public void SignalCured()
+    {
+        peopleCured++;
     }
 }

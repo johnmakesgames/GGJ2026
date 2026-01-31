@@ -41,6 +41,7 @@ public class CharacterController2D : MonoBehaviour
         interactionAction = InputSystem.actions.FindAction("Interact");
         stats = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody>();
+        playerAnimationManager.SetIsPlayer(true);
     }
 
     Vector3 GetDiagonalOnlyMovementDirection(Vector2 movementInput)
