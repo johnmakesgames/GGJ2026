@@ -20,6 +20,7 @@ public class PlayerInventory : MonoBehaviour
         { ItemTag.ExtraOxygenTank, 10 },
         { ItemTag.Can, 1 },
         { ItemTag.Gear, 1 },
+        { ItemTag.Food, 2 },
         { ItemTag.ScrapMetal, 1 },
         { ItemTag.Medkit, 5 },
         { ItemTag.COUNT, 0 },
