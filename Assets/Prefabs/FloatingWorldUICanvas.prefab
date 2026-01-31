@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5217132271861160536}
   - component: {fileID: 85630678519549923}
+  - component: {fileID: 2417816001564651002}
   m_Layer: 5
   m_Name: FloatingWorldUICanvas
   m_TagString: Untagged
@@ -60,6 +61,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2417816001564651002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480685519571297877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48375b10f93c54b4e9b97284945d95be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldUIEntityComponent
+  Text: {fileID: 7703683307293450797}
+  Image: {fileID: 1976348339519332333}
 --- !u!1 &4256553646257788331
 GameObject:
   m_ObjectHideFlags: 0
