@@ -1913,12 +1913,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2895015401062974820}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: -8.790045, y: 12.65, z: -26.71}
-  m_LocalScale: {x: 1.8132, y: 1.8132, z: 1.8132}
+  m_LocalRotation: {x: 0.2588191, y: -0, z: -0, w: 0.9659258}
+  m_LocalPosition: {x: 0.0110057555, y: 4.07, z: -6.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2464753643265405771}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!224 &634011787436093973
 RectTransform:
@@ -2288,10 +2288,11 @@ Transform:
   m_GameObject: {fileID: 7347220885493536640}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.81, y: 3.846, z: -17.97}
+  m_LocalPosition: {x: -8.81, y: 1.14, z: -17.97}
   m_LocalScale: {x: 1.8132, y: 1.8132, z: 1.8132}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 557171296086920849}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2515137007731602830
@@ -2343,11 +2344,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.03
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2638,9 +2639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd934cf88975ac34a8e4b97d80dbe1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
-  movementSpeed: 650
+  movementSpeed: 800
   sprintModifier: 500
-  sneakModifier: -300
+  sneakModifier: -400
   movementDirection: {x: 0, y: 0, z: 0}
 --- !u!222 &4653600319930133404
 CanvasRenderer:
@@ -2891,7 +2892,7 @@ Transform:
   m_GameObject: {fileID: 367904639184688989}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.03, y: 2.8200002, z: 2.91}
+  m_LocalPosition: {x: -9.03, y: 0.517, z: 2.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3257,7 +3258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController2D
   player: {fileID: 0}
   maxViewDistance: 10
-  movementSpeed: 500
+  movementSpeed: 700
   touchDamage: 10
 --- !u!54 &7358850517099209276
 Rigidbody:
@@ -3763,10 +3764,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.23953651
+  m_Height: 1.4227763
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.0073242844, y: 0.00080064574, z: 0}
 --- !u!54 &8757623942615104249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3872,7 +3873,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 619394802}
-  - {fileID: 557171296086920849}
   - {fileID: 2022920641}
   - {fileID: 1303449540}
   - {fileID: 6169526672279965252}
