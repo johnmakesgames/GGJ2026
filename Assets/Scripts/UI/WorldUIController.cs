@@ -1,6 +1,8 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class WorldUIController : MonoBehaviour
 {
@@ -16,11 +18,10 @@ public class WorldUIController : MonoBehaviour
     private Stack<WorldUIEntityComponent> FreeElements = new Stack<WorldUIEntityComponent>();
     private List<WorldUIEntityComponent> ActiveElements = new List<WorldUIEntityComponent>(); //Not a queue as some events have different timings to display for
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        WorldUIElementPool = Object.FindObjectsByType<WorldUIEntityComponent>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        WorldUIElementPool = UnityEngine.Object.FindObjectsByType<WorldUIEntityComponent>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         var worldCamera = Camera.main;
 
         foreach (var item in WorldUIElementPool)
@@ -32,7 +33,6 @@ public class WorldUIController : MonoBehaviour
                 if (canvas)
                 {
                     canvas.worldCamera = worldCamera;
-                    canvas.renderMode = RenderMode.ScreenSpaceCamera;
                     canvas.renderMode = RenderMode.WorldSpace;
                 }
             }
@@ -71,7 +71,7 @@ public class WorldUIController : MonoBehaviour
         //Can you really have no free UI elements....
         if(foundElementForWorldUI)
         {
-            foundElementForWorldUI.ShowWorldUI(dmg.ToString(), position, sourceOfDmg, WorldUIType.DamageEvent);
+            foundElementForWorldUI.ShowWorldUI(String.Format("{0:G1}", dmg).ToString(), position, sourceOfDmg, WorldUIType.DamageEvent);
         }
 
         return foundElementForWorldUI; //Maybe someone can properly reuse this element

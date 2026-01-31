@@ -6,7 +6,6 @@ public class OpenInventory : MonoBehaviour
 {
     InputAction OpenInventoryAction;
 
-    bool m_Loading = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
