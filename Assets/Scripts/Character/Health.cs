@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField]
+    float StartingHealth;
+
     private float health;
     public float CurrentHealth
     {
@@ -13,21 +16,40 @@ public class Health : MonoBehaviour
 
         set
         {
+            if (value == health)
+            {
+                return;
+            }
+
             if (value < health)
             {
-                OnDamage();
+                Debug.Log("Took damage");
+
+                if (OnDamage != null)
+                {
+                    OnDamage();
+                }
             }
 
             if (value > health)
             {
-                OnHeal();
+                Debug.Log("Healed");
+
+                if (OnHeal != null)
+                { 
+                    OnHeal();
+                }
             }
 
             health = value;
-            
+            Debug.Log($"Health now {health}");
+
             if (health < 0)
             {
-                OnDeath();
+                if (OnDeath != null)
+                {
+                    OnDeath();
+                }
             }
         }
     }
@@ -35,4 +57,9 @@ public class Health : MonoBehaviour
     public Action OnDeath;
     public Action OnDamage;
     public Action OnHeal;
+
+    public void Start()
+    {
+        CurrentHealth = StartingHealth;
+    }
 }
