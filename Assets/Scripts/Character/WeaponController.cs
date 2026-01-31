@@ -1,6 +1,4 @@
-using System.Net;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class WeaponController : MonoBehaviour 
 {
