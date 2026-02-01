@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 9bec3551ec4b8a34e93f9ee2fd7ef56e
+guid: 79e40865126ffa3488e80c3264f94e8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7704948105834090586
-    second: Enemy Idle-Sheet_0
+      213: 9068639126556993758
+    second: Enemy Run Forward anim-Sheet_0
   - first:
-      213: -8153605698090833397
-    second: Enemy Idle-Sheet_1
+      213: -7644629355136875153
+    second: Enemy Run Forward anim-Sheet_1
+  - first:
+      213: 638039094881207760
+    second: Enemy Run Forward anim-Sheet_2
+  - first:
+      213: -1474390126253460346
+    second: Enemy Run Forward anim-Sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,7 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy Idle-Sheet_0
+      name: Enemy Run Forward anim-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a505f0dca797dea60800000000000000
-      internalID: 7704948105834090586
+      spriteID: ed863a6ec374add70800000000000000
+      internalID: 9068639126556993758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy Idle-Sheet_1
+      name: Enemy Run Forward anim-Sheet_1
       rect:
         serializedVersion: 2
         x: 256
@@ -166,8 +172,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0ae1b631d298de80800000000000000
-      internalID: -8153605698090833397
+      spriteID: f650b8fba12d8e590800000000000000
+      internalID: -7644629355136875153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Run Forward anim-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d5c4332d25cad800800000000000000
+      internalID: 638039094881207760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Run Forward anim-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684b158edf9e98be0800000000000000
+      internalID: -1474390126253460346
       vertices: []
       indices: 
       edges: []
@@ -176,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3298d56b1999027439b67d691c4a2dec
+    spriteID: 744fb9be5e79e3d4bb4cd05178d85a5c
     internalID: 0
     vertices: []
     indices: 
@@ -186,10 +236,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Enemy Idle-Sheet_0: 7704948105834090586
-      Enemy Idle-Sheet_1: -8153605698090833397
+      Enemy Run Forward anim-Sheet_0: 9068639126556993758
+      Enemy Run Forward anim-Sheet_1: -7644629355136875153
+      Enemy Run Forward anim-Sheet_2: 638039094881207760
+      Enemy Run Forward anim-Sheet_3: -1474390126253460346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
