@@ -31,7 +31,7 @@ public class PlayerAnimationManager : MonoBehaviour
 
     public void SetLastFrameMovement(Vector3 movement)
     {
-        animator.SetFloat("MoveSpeed", movement.magnitude * 10 * Time.deltaTime);
+        animator.SetFloat("MoveSpeed", movement.magnitude * 50 * Time.deltaTime);
         animator.SetFloat("MoveDirection", movement.z);
         animator.SetBool("JustShot", false);
 
