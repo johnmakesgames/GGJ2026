@@ -178,4 +178,16 @@ public class EnemyController2D : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject == player && timeSinceLastHitTick >= 0.5f)
+        {
+            PlayerStats playerHealth = player.GetComponent<PlayerStats>();
+            if (playerHealth != null)
+            {
+                timeSinceLastHitTick = 0;
+            }
+        }
+    }
 }

@@ -51,7 +51,7 @@ MonoBehaviour:
   player: {fileID: 0}
   maxViewDistance: 50
   movementSpeed: 850
-  touchDamage: 10
+  touchDamage: 5
   playerAnimationManager: {fileID: 7215483158346206221}
   spriteRenderer: {fileID: 2431791382046400498}
   isCured: 0
