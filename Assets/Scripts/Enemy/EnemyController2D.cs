@@ -78,8 +78,6 @@ public class EnemyController2D : MonoBehaviour
     {
         Vector3 directionToPlayer = player.transform.position - this.transform.position;
         List<RaycastHit> hitObjects = Physics.RaycastAll(this.transform.position, directionToPlayer, maxViewDistance).Where(x => x.collider != myCollider).ToList();
-        hitObjects.AddRange(Physics.RaycastAll(this.transform.position, Quaternion.Euler(0, 15, 0) * directionToPlayer, maxViewDistance).Where(x => x.collider != myCollider).ToList());
-        hitObjects.AddRange(Physics.RaycastAll(this.transform.position, Quaternion.Euler(0, -15, 0) * directionToPlayer, maxViewDistance).Where(x => x.collider != myCollider).ToList());
         hitObjects.OrderBy(x => x.distance).ToList();
 
         if (hitObjects.Count > 0)

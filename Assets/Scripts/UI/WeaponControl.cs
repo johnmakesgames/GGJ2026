@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,9 @@ public class WeaponControl : MonoBehaviour
     public GameObject RifleImage;
 
     private GameObject[] WeaponAssetLook;
+    
+    public TextMeshProUGUI TotalAmmoCounter;
+    public GameObject[] AmmoInGunObjects;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +37,17 @@ public class WeaponControl : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void UpdateWeaponAmmoUI(int shotsAvailable, int ammoOverall)
+    {
+        for (int i = 0; i < AmmoInGunObjects.Length; ++i)
+        {
+            bool enabledShotCounter = i < shotsAvailable; //Shot counting is one based but array index is zero based. 1 shot, zero enabled, 2 shots, zero + one enabled
+            AmmoInGunObjects[i].SetActive(enabledShotCounter);
+        }
+
+        TotalAmmoCounter.text = $"{ammoOverall}";
     }
 
     void SetActiveWeapon(WeaponType weapon)
