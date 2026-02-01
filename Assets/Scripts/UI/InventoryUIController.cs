@@ -26,7 +26,7 @@ public class InventoryUIController : MonoBehaviour
         OpenInventoryAction = InputSystem.actions.FindAction("Inventory");
         OpenInventoryAction.Enable();
 
-        PlayerInventory = GameObject.FindAnyObjectByType<PlayerInventory>();
+        PlayerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
         if (PlayerInventory)
         {
             var items = PlayerInventory.GetAllInventoryItems();
