@@ -34,6 +34,10 @@ public class OpenInventory : MonoBehaviour
         }
     }
 
+    public void OpenInventory_Click()
+    {
+        OpenInventoryScene();
+    }
     void OpenInventoryScene()
     {
         //check scene is not open
