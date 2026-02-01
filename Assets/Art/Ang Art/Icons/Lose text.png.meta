@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -141,12 +141,12 @@ TextureImporter:
       name: Lose text_0
       rect:
         serializedVersion: 2
-        x: 101
-        y: 99
-        width: 189
-        height: 105
+        x: 0
+        y: 0
+        width: 600
+        height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,99 +159,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Lose text_1
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 68
-        width: 49
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6e64ffe96db49d70800000000000000
-      internalID: 9049065813989158507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lose text_2
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 52
-        width: 200
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 530062e4b083761a0800000000000000
-      internalID: -6816417889795047371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lose text_3
-      rect:
-        serializedVersion: 2
-        x: 284
-        y: 68
-        width: 48
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a5f2f75117f7e9780800000000000000
-      internalID: -8674355708600307878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lose text_4
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 42
-        width: 76
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1aa0ec4cc75c41500800000000000000
-      internalID: 366134609392306849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 563dad735c897e54993180c6076149a3
     internalID: 0
     vertices: []
     indices: 
@@ -259,13 +171,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":600.0,"y":300.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Lose text_0: -6922205365477068542
-      Lose text_1: 9049065813989158507
-      Lose text_2: -6816417889795047371
-      Lose text_3: -8674355708600307878
-      Lose text_4: 366134609392306849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

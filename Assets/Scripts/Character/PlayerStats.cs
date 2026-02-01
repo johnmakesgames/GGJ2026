@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -86,6 +87,11 @@ public class PlayerStats : MonoBehaviour
                 healthComponent.CurrentHealth = value;
             }
 
+            if (healthComponent.CurrentHealth <= 0)
+            {
+                SceneManager.LoadScene("DeathScene");
+            }
+
             if (playerStatsUI != null)
             {
                 playerStatsUI.SetHealthBarValue(CurrentHealth, MaximumHealth);
@@ -151,5 +157,10 @@ public class PlayerStats : MonoBehaviour
     public void SignalCured()
     {
         peopleCured++;
+
+        if (peopleCured > 5)
+        {
+            SceneManager.LoadScene("VictoryScene");
+        }
     }
 }
