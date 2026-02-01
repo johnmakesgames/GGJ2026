@@ -21,6 +21,9 @@ public class WeaponController : MonoBehaviour
     [SerializeField] Collider player;
 
     private InputAction shootAction;
+    
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip gunshotClip;
 
     public int GetAmmoInGun()
     {
@@ -35,6 +38,7 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         shootAction = InputSystem.actions.FindAction("Attack");
+        audioSource =  GetComponent<AudioSource>();
     }
 
     void Update()
@@ -79,6 +83,9 @@ public class WeaponController : MonoBehaviour
     void Shoot()
     {
         ammo--;
+        
+        if(gunshotClip != null)
+            audioSource.PlayOneShot(gunshotClip);
 
         var scrPoint = new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, 0);
         Ray ray = Camera.main.ScreenPointToRay(scrPoint);
