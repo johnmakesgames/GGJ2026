@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         creditsPanel = GameObject.Find("CreditsPanel");
-        if (creditsPanel == null )
+        if (creditsPanel != null )
         {
             creditsPanel.SetActive(false);
         }
