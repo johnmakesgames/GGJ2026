@@ -82,7 +82,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -174,12 +174,12 @@ TextureImporter:
       name: Win Screen_0
       rect:
         serializedVersion: 2
-        x: 60
-        y: 180
-        width: 71
-        height: 72
+        x: 0
+        y: 0
+        width: 600
+        height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -192,341 +192,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Win Screen_1
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 178
-        width: 75
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eff4fc411475ee8c0800000000000000
-      internalID: -3968138284633206786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_2
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 121
-        width: 99
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f16ad7c71e3738150800000000000000
-      internalID: 5873665751314703903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_3
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 165
-        width: 100
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b1fc0ed8a8d59f8a0800000000000000
-      internalID: -6270878156469514469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_4
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 169
-        width: 110
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b713b87254a2a2960800000000000000
-      internalID: 7577915799508824443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_5
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 176
-        width: 17
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32929f68ae8c77100800000000000000
-      internalID: 105774025878874403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_6
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 123
-        width: 112
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b67c4bc340fd9d770800000000000000
-      internalID: 8636178969750980459
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_7
-      rect:
-        serializedVersion: 2
-        x: 525
-        y: 152
-        width: 14
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ef0da05a211f1fa10800000000000000
-      internalID: 1941597976754049278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 43
-        width: 79
-        height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 683be24d3def00b00800000000000000
-      internalID: 792913720168592262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_9
-      rect:
-        serializedVersion: 2
-        x: 131
-        y: 51
-        width: 48
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 46b7eb7b921cfd780800000000000000
-      internalID: -8655987573862270108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_10
-      rect:
-        serializedVersion: 2
-        x: 181
-        y: 49
-        width: 52
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d98a1f66860381030800000000000000
-      internalID: 3465573138223442077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_11
-      rect:
-        serializedVersion: 2
-        x: 282
-        y: 49
-        width: 73
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee0bf2b569c3d3360800000000000000
-      internalID: 7150938399806828782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_12
-      rect:
-        serializedVersion: 2
-        x: 373
-        y: 87
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d35d5344adc66b10800000000000000
-      internalID: 1974491592037061593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_13
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 39
-        width: 55
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ce607972938e96e0800000000000000
-      internalID: -1828879733539967292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_14
-      rect:
-        serializedVersion: 2
-        x: 399
-        y: 74
-        width: 123
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d621b5f321b6888d0800000000000000
-      internalID: -2843905438567951763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Screen_15
-      rect:
-        serializedVersion: 2
-        x: 363
-        y: 42
-        width: 17
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f55b97e7bb5122cc0800000000000000
-      internalID: -3737400845739117217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8e7b7fcd7e19746438e0efed13a509ec
     internalID: 0
     vertices: []
     indices: 
@@ -534,24 +204,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":600.0,"y":300.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Win Screen_0: -6690206148019444834
-      Win Screen_1: -3968138284633206786
-      Win Screen_10: 3465573138223442077
-      Win Screen_11: 7150938399806828782
-      Win Screen_12: 1974491592037061593
-      Win Screen_13: -1828879733539967292
-      Win Screen_14: -2843905438567951763
-      Win Screen_15: -3737400845739117217
-      Win Screen_2: 5873665751314703903
-      Win Screen_3: -6270878156469514469
-      Win Screen_4: 7577915799508824443
-      Win Screen_5: 105774025878874403
-      Win Screen_6: 8636178969750980459
-      Win Screen_7: 1941597976754049278
-      Win Screen_8: 792913720168592262
-      Win Screen_9: -8655987573862270108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
