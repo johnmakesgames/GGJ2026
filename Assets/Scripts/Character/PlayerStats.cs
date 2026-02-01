@@ -82,6 +82,7 @@ public class PlayerStats : MonoBehaviour
             }
             else
             {
+                TakeDamage(healthComponent.CurrentHealth - value);
                 healthComponent.CurrentHealth = value;
             }
 
@@ -117,13 +118,11 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         CurrentOxygen -= OxygenUsagePerSecond * Time.deltaTime;
-
-        TakeDamage(DamageOverTimePerSecond * Time.deltaTime);
+        CurrentHealth -= DamageOverTimePerSecond * Time.deltaTime;
     }
 
     void TakeDamage(float dmg)
     {
-        CurrentHealth -= dmg;
         if (worldUIController != null && CurrentHealth > 0.0f && dmg != 0)
         {
             bool reuseDamageForSameSource = true;
