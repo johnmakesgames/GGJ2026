@@ -38,6 +38,12 @@ public class InventoryUIController : MonoBehaviour
         }
     }
 
+    public void CloseInventory_Click()
+    {
+        CloseInventoryScene();
+    }
+
+
     void LoadItemInInventoryUI()
     {
 
