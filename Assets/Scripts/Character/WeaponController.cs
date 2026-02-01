@@ -8,28 +8,35 @@ public class WeaponController : MonoBehaviour
     public Transform weapon;
     public float maxDistance = 20f;
     public LayerMask hitMask;
-    
-    Collider myCollider;
+
+    private float delay;
+    public int Ammo = 50;
+    public float pistolFireRate = 3;
+
+    [SerializeField] Collider player;
 
     private InputAction shootAction;
+
 
     void Start()
     {
         shootAction = InputSystem.actions.FindAction("Attack");
-        myCollider = weapon.GetComponent<Collider>();
     }
 
     void Update()
     {
         if (shootAction.ReadValue<float>() > 0)
         {
-            Shoot();
+            pistolFireRate += Time.deltaTime;
+            if (pistolFireRate > delay)
+                Shoot();
         }
     }
-    
+
 
     void Shoot()
     {
+        Ammo--;
         var scrPoint = new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, 0);
         Ray ray = Camera.main.ScreenPointToRay(scrPoint);
         RaycastHit hit;
@@ -42,15 +49,32 @@ public class WeaponController : MonoBehaviour
             Vector3 direction = (hitPoint - origin).normalized;
             Debug.DrawRay(origin, direction * maxDistance, Color.green);
 
-            if (Physics.Raycast(origin, direction, out hit, maxDistance, hitMask))
+            Health enemyHealth = EnemyHit(direction);
+
+            if (enemyHealth != null)
             {
-                var enemy =  hit.collider.GetComponent<EnemyController2D>();
-                
+                Debug.Log("Hit");
+                enemyHealth.CurrentHealth--;
+                Debug.Log("Enemy health: " + enemyHealth.CurrentHealth);
             }
-            
-            
+            else
+            {
+                Debug.Log("Miss");
+            }
         }
     }
 
-    
+    Health EnemyHit(Vector3 hitPoint)
+    {
+        List<RaycastHit> hits = Physics.RaycastAll(this.transform.position, hitPoint, maxDistance)
+            .Where(x => x.collider != player)
+            .OrderBy(y => y.distance).ToList();
+
+        if (hits.Count() <= 0)
+        {
+            Debug.Log("No Hit");
+        }
+
+        return hits[0].transform.root.gameObject.GetComponent<Health>();
+    }
 }
