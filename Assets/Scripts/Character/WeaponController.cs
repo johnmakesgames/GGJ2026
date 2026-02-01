@@ -63,9 +63,12 @@ public class WeaponController : MonoBehaviour
 
     private void TryShoot()
     {
-        if (ammo == 0 && ammoStockpile == 0)
+        if (ammo <= 0 && ammoStockpile <= 0)
         {
-            if(emptyGunClip != null)
+            ammo = 0;
+            ammoStockpile = 0;
+
+            if (emptyGunClip != null)
                 audioSource.PlayOneShot(emptyGunClip);
             return;
         }
