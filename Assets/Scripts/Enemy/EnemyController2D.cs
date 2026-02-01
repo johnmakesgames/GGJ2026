@@ -31,6 +31,12 @@ public class EnemyController2D : MonoBehaviour
 
     private WorldUIController worldUIController;
 
+    ~EnemyController2D()
+    {
+        this.GetComponent<Health>().OnDamage -= OnDamage;
+        this.GetComponent<Health>().OnDeath -= OnDeath;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
