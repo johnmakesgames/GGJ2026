@@ -118,6 +118,7 @@ public class PlayerStats : MonoBehaviour
 
     public void AddAmmoToStockpile(int amount)
     {
+        Debug.Log("Adding ammo");
         weaponController.AddAmmoToStockpile(amount);
     }
 
@@ -133,6 +134,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         healthComponent = GetComponent<Health>();
+        weaponController = GetComponent<WeaponController>();
 
         CurrentOxygen = StartingOxygen;
         CurrentHealth = StartingHealth;

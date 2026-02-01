@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 0d15122a8782f6148aec5a812337e3e6
+guid: 37e58e2a5ea564e4da29c3137e301bff
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 7886631795410796208
-    second: Settings_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -42,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -109,40 +106,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Settings_0
+      name: Taylor_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 119
-        height: 40
+        x: 56
+        y: 80
+        width: 184
+        height: 184
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0bef2cf25d1f27d60800000000000000
-      internalID: 7886631795410796208
+      spriteID: 9915dba4e0d0b2440838ddf1182a2dd7
+      internalID: 1462091650
       vertices: []
       indices: 
       edges: []
@@ -151,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e21eb3453d90fea41b42decffb374937
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +143,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Settings_0: 7886631795410796208
+      Taylor_0: 1462091650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
