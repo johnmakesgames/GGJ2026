@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
 
 public class InventoryUIController : MonoBehaviour
 {
@@ -29,20 +30,29 @@ public class InventoryUIController : MonoBehaviour
         if (PlayerInventory)
         {
             var items = PlayerInventory.GetAllInventoryItems();
-            int i = 0;
-            foreach (var item in items)
+            //int i = 0;
+            //foreach (var item in items)
+            //{
+            //    if ((int)item < InventoryItemUIPrefab.Length)
+            //    {
+            //        GameObject c = Object.Instantiate(InventoryItemUIPrefab[(int)item], this.gameObject.transform);
+            //        var handler = c.GetComponent<InventoryItemHandler>();
+            //        if (handler != null)
+            //        {
+            //            handler.Configure(item, i++);
+            //        }
+            //    }
+            //}
+
+            for (int i = 0; i < 24; ++i)
             {
-                if ((int)item < InventoryItemUIPrefab.Length)
+                GameObject c = Object.Instantiate(InventoryItemUIPrefab[(int)ItemTag.Medkit], this.gameObject.transform);
+                var handler = c.GetComponent<InventoryItemHandler>();
+                if (handler != null)
                 {
-                    GameObject c = Object.Instantiate(InventoryItemUIPrefab[(int)item], this.gameObject.transform);
-                    var handler = c.GetComponent<InventoryItemHandler>();
-                    if (handler != null)
-                    {
-                        handler.Configure(item, i);
-                    }
+                    handler.Configure(ItemTag.Medkit, i);
                 }
             }
-
             m_InventorySelector = PlayerInventory.TryConsumeInventorySelection();
         }
 
