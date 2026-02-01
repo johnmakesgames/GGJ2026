@@ -39,12 +39,10 @@ public class PlayerAnimationManager : MonoBehaviour
             if (movement.x > 0)
             {
                 spriteRenderer.flipX = false;
-                Debug.Log("Flipped by movement Right");
             }
             else if (movement.x < 0)
             {
                 spriteRenderer.flipX = true;
-                Debug.Log("Flipped by movement Left");
             }
         }
 
@@ -60,12 +58,10 @@ public class PlayerAnimationManager : MonoBehaviour
             if (mouseLocation.x > 0)
             {
                 spriteRenderer.flipX = false;
-                Debug.Log("Flipped by mouse Right");
             }
             else if (mouseLocation.x < 0)
             {
                 spriteRenderer.flipX = true;
-                Debug.Log("Flipped by mouse Left");
             }
 
             animator.SetFloat("MoveDirection", mouseLocation.y);
@@ -78,12 +74,6 @@ public class PlayerAnimationManager : MonoBehaviour
     public bool CanMove()
     {
         bool shooting = animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.ToLower().Contains("shoot");
-
-        if (shooting)
-        {
-            Debug.Log("Can't move due to shoot");
-        }
-
         return !shooting && (timeSinceShot > 0.5f);
     }
 }

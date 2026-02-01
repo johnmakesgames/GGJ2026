@@ -28988,8 +28988,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7347220884982020832, guid: e9a2944566f6782448096476d0697b4a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2040747737606548975}
   m_SourcePrefab: {fileID: 100100000, guid: e9a2944566f6782448096476d0697b4a, type: 3}
+--- !u!1 &2040747737606548972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7347220884982020832, guid: e9a2944566f6782448096476d0697b4a, type: 3}
+  m_PrefabInstance: {fileID: 2040747737606548971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &2040747737606548973 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 6339247546046854624, guid: e9a2944566f6782448096476d0697b4a, type: 3}
+  m_PrefabInstance: {fileID: 2040747737606548971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2040747737606548974 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2464753643776925227, guid: e9a2944566f6782448096476d0697b4a, type: 3}
+  m_PrefabInstance: {fileID: 2040747737606548971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2040747737606548975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040747737606548972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6dde150effc4844879b11a2d3c3fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponController
+  weapon: {fileID: 2040747737606548974}
+  maxDistance: 20
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 0
+  pistolFireRate: 0.002
+  Ammo: 0
+  player: {fileID: 2040747737606548973}
 --- !u!1001 &3473803862426562806
 PrefabInstance:
   m_ObjectHideFlags: 0
