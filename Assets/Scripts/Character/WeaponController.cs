@@ -9,9 +9,11 @@ public class WeaponController : MonoBehaviour
     public float maxDistance = 20f;
     public LayerMask hitMask;
 
-    private float delay;
-    public int Ammo = 50;
-    public float pistolFireRate = 3;
+    [SerializeField] private float pistolFireRate = 0.002f;
+    float delay = 0.0f;
+
+    [SerializeField] public int Ammo;
+
 
     [SerializeField] Collider player;
 
@@ -27,10 +29,17 @@ public class WeaponController : MonoBehaviour
     {
         if (shootAction.ReadValue<float>() > 0)
         {
-            pistolFireRate += Time.deltaTime;
-            if (pistolFireRate > delay)
-                Shoot();
+            TryShoot();
         }
+    }
+
+    private void TryShoot()
+    {
+        if (Time.time < delay)
+            return;
+
+        delay += Time.deltaTime + pistolFireRate;
+        Shoot();
     }
 
 
