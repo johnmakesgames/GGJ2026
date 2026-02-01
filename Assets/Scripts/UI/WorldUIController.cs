@@ -58,13 +58,13 @@ public class WorldUIController : MonoBehaviour
         FreeElements.Push(element);
     }
 
-    WorldUIEntityComponent GetUIWorldElement(GameObject source, bool reuseElement)
+    WorldUIEntityComponent GetUIWorldElement(GameObject source, WorldUIType type, bool reuseElement)
     {
         WorldUIEntityComponent foundElementForWorldUI = null;
         //look through active elements for a matching one
         if (reuseElement)
         {
-            foundElementForWorldUI = ActiveElements.FindLast(x => x.CanReuse(source, WorldUIType.DamageEvent));
+            foundElementForWorldUI = ActiveElements.FindLast(x => x.CanReuse(source, type));
         }
 
         if (foundElementForWorldUI == null)
@@ -72,6 +72,7 @@ public class WorldUIController : MonoBehaviour
             if (FreeElements.TryPop(out foundElementForWorldUI))
             {
                 ActiveElements.Add(foundElementForWorldUI);
+                foundElementForWorldUI.ConfigureType(source, type);
                 foundElementForWorldUI.gameObject.SetActive(true);
             }
         }
@@ -80,11 +81,11 @@ public class WorldUIController : MonoBehaviour
 
     internal WorldUIEntityComponent ShowDamage(float dmg, Vector3 position, GameObject sourceOfDmg, bool reuseDamageForSameSource)
     {
-        WorldUIEntityComponent foundElementForWorldUI = GetUIWorldElement(sourceOfDmg, reuseDamageForSameSource);
+        WorldUIEntityComponent foundElementForWorldUI = GetUIWorldElement(sourceOfDmg, WorldUIType.DamageEvent, reuseDamageForSameSource);
         //Can you really have no free UI elements....
         if (foundElementForWorldUI)
         {
-            foundElementForWorldUI.ShowWorldUI($"-{dmg}", position, sourceOfDmg, WorldUIType.DamageEvent);
+            foundElementForWorldUI.UpdateText($"-{dmg}", position);
         }
 
         return foundElementForWorldUI; //Maybe someone can properly reuse this element
@@ -94,7 +95,7 @@ public class WorldUIController : MonoBehaviour
     internal void ShowItemPickedup(ItemTag item, GameObject source)
     {
         bool resueElement = false;
-        WorldUIEntityComponent foundElementForWorldUI = GetUIWorldElement(source, resueElement);
+        WorldUIEntityComponent foundElementForWorldUI = GetUIWorldElement(source, WorldUIType.Scavenge, resueElement);
         if (foundElementForWorldUI)
         {
             string itemGainedStr = "Picked up ";
@@ -156,7 +157,7 @@ public class WorldUIController : MonoBehaviour
                     }
             } 
 
-            foundElementForWorldUI.ShowWorldUI(itemGainedStr, source.gameObject.transform.position, source, WorldUIType.Scavenge);
+            foundElementForWorldUI.UpdateText(itemGainedStr, source.gameObject.transform.position);
         }
         throw new NotImplementedException();
     }
@@ -164,11 +165,11 @@ public class WorldUIController : MonoBehaviour
 
     internal WorldUIEntityComponent ShowStatGained(string source, GameObject sourceObj, WorldUIType type)
     {
-        WorldUIEntityComponent foundElementForWorldUI = GetUIWorldElement(sourceObj, false);
+        WorldUIEntityComponent foundElementForWorldUI = GetUIWorldElement(sourceObj, type, false);
         //Can you really have no free UI elements....
         if (foundElementForWorldUI)
         {
-            foundElementForWorldUI.ShowWorldUI(source, sourceObj.transform.position, sourceObj, type);
+            foundElementForWorldUI.UpdateText(source, sourceObj.transform.position);
         }
 
         return foundElementForWorldUI; //Maybe someone can properly reuse this element
