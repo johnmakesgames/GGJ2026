@@ -22,6 +22,10 @@ public class WeaponController : MonoBehaviour
 
     private InputAction shootAction;
 
+    public int GetAmmoInGun()
+    {
+        return ammo;
+    }
 
     void Start()
     {

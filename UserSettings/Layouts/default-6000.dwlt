@@ -245,8 +245,8 @@ MonoBehaviour:
     y: 0
     width: 550
     height: 744
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 1369
-    y: 87
+    y: 24
     width: 549
     height: 718
   m_SerializedDataModeController:
@@ -390,8 +390,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "UnityEditor.MainToolbarWindow\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 51
+    x: 0
+    y: 0
     width: 1918
     height: 36
   m_SerializedDataModeController:
@@ -656,8 +656,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 87
+    x: 0
+    y: 24
     width: 248
     height: 718
   m_SerializedDataModeController:
@@ -676,8 +676,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs:
-      - m_Data: 62232
+      m_SelectedIDs: []
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
@@ -738,7 +737,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 250
-    y: 87
+    y: 24
     width: 1117
     height: 718
   m_SerializedDataModeController:
@@ -1351,7 +1350,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -1361,7 +1360,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.11906384, y: 0.61104155, z: -0.093251675, w: 0.777096}
     speed: 2
-    m_Value: {x: 0.12022192, y: 0.61086375, z: -0.09416253, w: 0.7768692}
+    m_Value: {x: 0.11906385, y: 0.61104155, z: -0.09325168, w: 0.777096}
   m_Size:
     m_Target: 27.780853
     speed: 2
@@ -1523,8 +1522,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 831
+    x: 0
+    y: 768
     width: 1918
     height: 282
   m_SerializedDataModeController:
@@ -1575,12 +1574,10 @@ MonoBehaviour:
       m_Data: 61932
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 56464
-    - m_Data: 61930
-    - m_Data: 61932
-    - m_Data: 61934
-    - m_Data: 62252
-    - m_Data: 1000000000
+    - m_Data: 54174
+    - m_Data: 54176
+    - m_Data: 54178
+    - m_Data: 54180
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1613,10 +1610,10 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 56464
-    - m_Data: 61930
-    - m_Data: 61932
-    - m_Data: 61934
+    - m_Data: 54174
+    - m_Data: 54176
+    - m_Data: 54178
+    - m_Data: 54180
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1654,8 +1651,8 @@ MonoBehaviour:
     - m_Data: 51716
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: AmmoPickup
-      m_OriginalName: AmmoPickup
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1663,10 +1660,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 53554
+        m_Data: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 11}
