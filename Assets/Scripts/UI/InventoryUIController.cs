@@ -7,9 +7,11 @@ public class InventoryUIController : MonoBehaviour
 {
     InputAction OpenInventoryAction;
 
-    public GameObject InventoryItemUIPrefab;
+    public GameObject[] InventoryItemUIPrefab;
 
     PlayerInventory PlayerInventory;
+
+    InventoryItemHandler m_CurrentItem = null;
 
     bool Closing = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,14 +21,34 @@ public class InventoryUIController : MonoBehaviour
         OpenInventoryAction.Enable();
 
         PlayerInventory = GameObject.FindAnyObjectByType<PlayerInventory>();
-        if (InventoryItemUIPrefab && PlayerInventory)
+        if (PlayerInventory)
         {
             var items = PlayerInventory.GetAllInventoryItems();
+            int i = 0;
             foreach (var item in items)
             {
-                Object.Instantiate(InventoryItemUIPrefab, this.gameObject.transform);
+                if ((int)item < InventoryItemUIPrefab.Length)
+                {
+                    GameObject c = Object.Instantiate(InventoryItemUIPrefab[(int)item], this.gameObject.transform);
+                    var handler = c.GetComponent<InventoryItemHandler>();
+                    if (handler != null)
+                    {
+                        handler.Configure(item, i);
+                    }
+                }
             }
         }
+    }
+
+    public void Selected(InventoryItemHandler handler)
+    {
+        m_CurrentItem = handler;
+        RefreshOptions();
+    }
+
+    void RefreshOptions()
+    {
+
     }
 
     // Update is called once per frame

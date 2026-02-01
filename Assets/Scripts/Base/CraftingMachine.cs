@@ -28,6 +28,7 @@ public class CraftingMachine : BaseMachine
         RecipeLookups.Add(new CraftingRecipe(ItemTag.ScrapMetal, ItemTag.Gunpowder), ItemTag.Ammo);
         RecipeLookups.Add(new CraftingRecipe(ItemTag.Can, ItemTag.Plant), ItemTag.Food);
         RecipeLookups.Add(new CraftingRecipe(ItemTag.Plant, ItemTag.Slug), ItemTag.Medkit);
+        RecipeLookups.Add(new CraftingRecipe(ItemTag.Medkit, ItemTag.Food), ItemTag.Cure);
 
         List<string> possibleItemStrings = new List<string>(Enum.GetNames(typeof(ItemTag)));
         //Remove string for ItemTag.Count which should always be at the end.
