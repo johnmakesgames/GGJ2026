@@ -147,6 +147,11 @@ public class PlayerStats : MonoBehaviour
     {
         CurrentOxygen -= OxygenUsagePerSecond * Time.deltaTime;
         CurrentHealth -= DamageOverTimePerSecond * Time.deltaTime;
+
+        if (SceneManager.GetActiveScene().name == "BaseScene")
+        {
+            CurrentOxygen = MaximumOxygen;
+        }
     }
 
     void TakeDamage(float dmg)
