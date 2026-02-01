@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MAIN MENU
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2175,7 +2175,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 14, y: -100}
-  m_SizeDelta: {x: 344.9011, y: 64.669}
+  m_SizeDelta: {x: 240, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &804654261
 MonoBehaviour:
@@ -2846,7 +2846,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 14, y: -286.4}
-  m_SizeDelta: {x: 344.9011, y: 64.669}
+  m_SizeDelta: {x: 240, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199427631
 MonoBehaviour:
@@ -6447,11 +6447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7372395697057445186, guid: da44594254276464486a1f3d4490464d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 26
+      value: 40.816
       objectReference: {fileID: 0}
     - target: {fileID: 7372395697057445186, guid: da44594254276464486a1f3d4490464d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -306
+      value: -286.4
       objectReference: {fileID: 0}
     - target: {fileID: 7372395697057445186, guid: da44594254276464486a1f3d4490464d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6512,7 +6512,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 14, y: -193.2}
-  m_SizeDelta: {x: 344.9011, y: 64.669}
+  m_SizeDelta: {x: 240, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836815589
 MonoBehaviour:
@@ -6590,8 +6590,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -2986818500251847579, guid: a12da014674334941a04b84a72c446d7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
