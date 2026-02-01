@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -104,7 +104,8 @@ public class EnemyController2D : MonoBehaviour
 
     void MoveTowardsSaferoom()
     {
-        Vector3 dirToSaferoom = Vector3.Normalize(new Vector3(0,this.transform.position.y,0) - this.transform.position);
+        Vector3 safeRoom = new Vector3(-11.27f, 3.08f, 39.9f);
+        Vector3 dirToSaferoom = Vector3.Normalize(safeRoom - this.transform.position);
 
         Vector3 totalFrameMovement = dirToSaferoom * (movementSpeed * 1.5f) * Time.deltaTime;
         rb.AddForce(totalFrameMovement);
