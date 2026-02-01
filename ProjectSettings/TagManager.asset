@@ -7,6 +7,7 @@ TagManager:
   - HUD
   - PlayerUI
   - WorldUI
+  - ItemDropper
   layers:
   - Default
   - TransparentFX

@@ -27,8 +27,9 @@ public class EnemyController2D : MonoBehaviour
 
     [SerializeField]
     SpriteRenderer spriteRenderer;
-
     public bool isCured;
+
+    private WorldUIController worldUIController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,6 +40,8 @@ public class EnemyController2D : MonoBehaviour
 
         this.GetComponent<Health>().OnDamage += OnDamage;
         this.GetComponent<Health>().OnDeath += OnDeath;
+
+        worldUIController = GameObject.FindGameObjectWithTag("WorldUI").GetComponent<WorldUIController>();
 
         isCured = false;
 
@@ -106,13 +109,18 @@ public class EnemyController2D : MonoBehaviour
         spriteRenderer.color = newColor;
     }
 
-    void OnDamage()
+    void OnDamage(float dmg)
     {
-        // Do something maybe sound or flash or something
+        worldUIController.ShowDamage(dmg, gameObject.transform.position, this.gameObject, false);
     }
 
     void OnDeath()
     {
+        if (!isCured)
+        {
+            GameObject.FindGameObjectWithTag("ItemDropper").GetComponent<ItemDropSpawner>().DropRandomItemAtSpot(this.transform);
+        }
+
         this.GetComponent<Health>().OnDamage -= OnDamage;
         this.GetComponent<Health>().OnDeath -= OnDeath;
         Destroy(this.gameObject);
@@ -139,15 +147,11 @@ public class EnemyController2D : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Colliding");
         if (collision.gameObject == player)
         {
-            Debug.Log("It is player");
-
             PlayerStats playerHealth = player.GetComponent<PlayerStats>();
             if (playerHealth != null)
             {
-                Debug.Log("Player has health");
                 playerHealth.CurrentHealth -= touchDamage;
             }
         }

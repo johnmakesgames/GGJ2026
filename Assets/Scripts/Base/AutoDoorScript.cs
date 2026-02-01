@@ -4,6 +4,8 @@ using UnityEngine;
 public class AutoDoorScript : MonoBehaviour
 {
     [SerializeField]
+    private GameObject exitSignObject;
+    [SerializeField]
     private GameObject doorObject;
     [SerializeField]
     private Vector3 closedPosition;
@@ -22,6 +24,11 @@ public class AutoDoorScript : MonoBehaviour
         isOpening = false;
         elapsedOpenTime = 0.0f;
         doorObject.transform.localPosition = closedPosition;
+
+        if (exitSignObject)
+        {
+            exitSignObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -53,6 +60,11 @@ public class AutoDoorScript : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             isOpening = true;
+            
+            if(exitSignObject)
+            {
+                exitSignObject.SetActive(true);
+            }
         }
     }
     private void OnTriggerExit(Collider collider)
@@ -63,6 +75,11 @@ public class AutoDoorScript : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             isOpening = false;
+
+            if (exitSignObject)
+            {
+                exitSignObject.SetActive(false);
+            }
         }
     }
 

@@ -15,11 +15,9 @@ public class PickupComponent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered trigger");
         PlayerPickupResponse response = other.gameObject.GetComponent<PlayerPickupResponse>();
         if (response != null)
         {
-            Debug.Log("Is Player");
             response.PickedUp(pickupType, pickupAmount, pickupItem);
             Destroy(this.gameObject);
         }

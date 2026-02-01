@@ -121,5 +121,9 @@ public class CharacterController2D : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            playerAnimationManager.SetLastFrameMovement(Vector3.zero);
+        }
     }
 }
