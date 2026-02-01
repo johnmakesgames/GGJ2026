@@ -1343,15 +1343,15 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 0
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 492.5986, y: 419.12726, z: 338.10925}
+    m_Target: {x: 950.34546, y: 552.65314, z: -4.9436493}
     speed: 2
-    m_Value: {x: 1009, y: 751, z: 0}
+    m_Value: {x: 492.5986, y: 419.12726, z: 338.10925}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1397,17 +1397,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.482
   m_Rotation:
-    m_Target: {x: -0.13312827, y: 0.8237061, z: -0.21631211, w: -0.5069463}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.13312826, y: 0.823706, z: -0.21631208, w: -0.50694627}
   m_Size:
-    m_Target: 756.2464
+    m_Target: 669.819
     speed: 2
     m_Value: 756.2464
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -1421,7 +1421,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.13312827, y: 0.8237061, z: -0.21631211, w: -0.5069463}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 16}
@@ -1687,10 +1687,10 @@ MonoBehaviour:
       m_Data: 53566
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 54820
-    - m_Data: 54822
-    - m_Data: 54824
-    - m_Data: 54826
+    - m_Data: 51428
+    - m_Data: 51430
+    - m_Data: 51432
+    - m_Data: 51434
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1723,10 +1723,10 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 54820
-    - m_Data: 54822
-    - m_Data: 54824
-    - m_Data: 54826
+    - m_Data: 51428
+    - m_Data: 51430
+    - m_Data: 51432
+    - m_Data: 51434
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

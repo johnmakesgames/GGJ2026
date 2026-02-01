@@ -30,7 +30,7 @@ public class PlayerAnimationManager : MonoBehaviour
 
     public void SetLastFrameMovement(Vector3 movement)
     {
-        animator.SetFloat("MoveSpeed", movement.magnitude);
+        animator.SetFloat("MoveSpeed", movement.magnitude * 10 * Time.deltaTime);
         animator.SetFloat("MoveDirection", movement.z);
         animator.SetBool("JustShot", false);
 
@@ -46,7 +46,8 @@ public class PlayerAnimationManager : MonoBehaviour
             }
         }
 
-        if (attackAction.ReadValue<float>() > 0.0f & timeSinceShot >= 0.25f && isPlayer)
+        
+        if (attackAction.WasPerformedThisFrame() && timeSinceShot >= 0.25f && isPlayer)
         {
             Vector2 mouseLocation = Mouse.current.position.ReadValue();
             mouseLocation.x /= Screen.width;

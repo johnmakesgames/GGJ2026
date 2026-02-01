@@ -151,6 +151,7 @@ public class EnemyController2D : MonoBehaviour
         }
     }
 
+    float timeSinceLastHitTick = 0;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == player)
@@ -159,6 +160,21 @@ public class EnemyController2D : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.CurrentHealth -= touchDamage;
+                timeSinceLastHitTick = 0;
+            }
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        timeSinceLastHitTick += Time.deltaTime;
+        if (collision.gameObject == player && timeSinceLastHitTick >= 0.5f)
+        {
+            PlayerStats playerHealth = player.GetComponent<PlayerStats>();
+            if (playerHealth != null)
+            {
+                playerHealth.CurrentHealth -= touchDamage;
+                timeSinceLastHitTick = 0;
             }
         }
     }
