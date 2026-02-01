@@ -51,6 +51,14 @@ public class CraftingMachine : BaseMachine
 
     }
 
+    public override void OnTriggerEnter(Collider other)
+    {
+        base.OnTriggerEnter(other);
+        ItemA.ClearSelection();
+        ItemB.ClearSelection();
+    }
+
+
     public void OnCraftButtonPressed()
     {
         if (ItemA && ItemB && ItemA.HasValidSelection() && ItemB.HasValidSelection())

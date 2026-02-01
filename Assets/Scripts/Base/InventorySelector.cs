@@ -18,7 +18,7 @@ public class InventorySelector : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        inventoryRef = GameObject.FindAnyObjectByType<PlayerInventory>();
+        inventoryRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
     }
 
     // Update is called once per frame
