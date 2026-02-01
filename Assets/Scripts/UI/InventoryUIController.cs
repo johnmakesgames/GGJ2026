@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
 
 public class InventoryUIController : MonoBehaviour
 {
@@ -38,11 +39,10 @@ public class InventoryUIController : MonoBehaviour
                     var handler = c.GetComponent<InventoryItemHandler>();
                     if (handler != null)
                     {
-                        handler.Configure(item, i);
+                        handler.Configure(item, i++);
                     }
                 }
             }
-
             m_InventorySelector = PlayerInventory.TryConsumeInventorySelection();
         }
 
