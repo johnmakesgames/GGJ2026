@@ -113,6 +113,11 @@ public class EnemyController2D : MonoBehaviour
 
     void OnDeath()
     {
+        if (!isCured)
+        {
+            GameObject.FindGameObjectWithTag("ItemDropper").GetComponent<ItemDropSpawner>().DropRandomItemAtSpot(this.transform);
+        }
+
         this.GetComponent<Health>().OnDamage -= OnDamage;
         this.GetComponent<Health>().OnDeath -= OnDeath;
         Destroy(this.gameObject);
@@ -139,15 +144,11 @@ public class EnemyController2D : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Colliding");
         if (collision.gameObject == player)
         {
-            Debug.Log("It is player");
-
             PlayerStats playerHealth = player.GetComponent<PlayerStats>();
             if (playerHealth != null)
             {
-                Debug.Log("Player has health");
                 playerHealth.CurrentHealth -= touchDamage;
             }
         }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3028290533540979844
+--- !u!1 &1969218039697147852
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 598326308140450714}
-  - component: {fileID: 8057938716663452331}
-  - component: {fileID: 669840989136942388}
-  - component: {fileID: 6216183620895670456}
+  - component: {fileID: 1438943101502997557}
+  - component: {fileID: 4211115932540947908}
+  - component: {fileID: 4721084820201929160}
+  - component: {fileID: 6003142522583350417}
   m_Layer: 0
-  m_Name: OxygenPickup
+  m_Name: ItemPickup_Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &598326308140450714
+--- !u!4 &1438943101502997557
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3028290533540979844}
+  m_GameObject: {fileID: 1969218039697147852}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 551650503101421625}
+  - {fileID: 2848463132869610933}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &8057938716663452331
+--- !u!135 &4211115932540947908
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3028290533540979844}
+  m_GameObject: {fileID: 1969218039697147852}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -56,28 +56,28 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &669840989136942388
+--- !u!114 &4721084820201929160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3028290533540979844}
+  m_GameObject: {fileID: 1969218039697147852}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af64cfa92bdfdad40ae1d6dcd9e6a457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupComponent
-  pickupType: 1
-  pickupAmount: 5
-  pickupItem: 10
---- !u!54 &6216183620895670456
+  pickupType: 9
+  pickupAmount: 1
+  pickupItem: 2
+--- !u!54 &6003142522583350417
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3028290533540979844}
+  m_GameObject: {fileID: 1969218039697147852}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
@@ -98,7 +98,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &5840251511191886734
+--- !u!1 &2175832092426039413
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,8 +106,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 551650503101421625}
-  - component: {fileID: 130782004559368597}
+  - component: {fileID: 2848463132869610933}
+  - component: {fileID: 2891239162616648349}
   m_Layer: 0
   m_Name: Pickup_Sprite
   m_TagString: Untagged
@@ -115,29 +115,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &551650503101421625
+--- !u!4 &2848463132869610933
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5840251511191886734}
+  m_GameObject: {fileID: 2175832092426039413}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 598326308140450714}
+  m_Father: {fileID: 1438943101502997557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &130782004559368597
+--- !u!212 &2891239162616648349
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5840251511191886734}
+  m_GameObject: {fileID: 2175832092426039413}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 6447764752860242599, guid: 4ed24b7870ef7bf4e98a5bb6b85dcf56, type: 3}
+  m_Sprite: {fileID: 906388131340123023, guid: 124daae1e35e0824484d6af42677246b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

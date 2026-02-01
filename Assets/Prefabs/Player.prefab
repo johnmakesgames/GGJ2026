@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3781910019033479378, guid: 633716c7fc6018847ab042e66f9dff4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 6339247546046854624}
   - component: {fileID: -8057156730865707075}
   - component: {fileID: 7206453869596347950}
+  - component: {fileID: 34082057425816294}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -368,7 +369,7 @@ MonoBehaviour:
   sprintModifier: 600
   sneakModifier: -500
   movementDirection: {x: 0, y: 0, z: 0}
-  oxygenUseScalar: 0.05
+  oxygenUseScalar: 0.02
   playerAnimationManager: {fileID: 1378450948409268977}
 --- !u!114 &315348956052587728
 MonoBehaviour:
@@ -479,3 +480,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   items: 
   MaximumInventorySlots: 24
+--- !u!114 &34082057425816294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347220884982020832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6dde150effc4844879b11a2d3c3fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponController
+  weapon: {fileID: 2464753643776925227}
+  maxDistance: 20
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 0
+  pistolFireRate: 0.002
+  Ammo: 0
+  player: {fileID: 6339247546046854624}

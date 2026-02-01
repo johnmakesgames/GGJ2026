@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6483412549953819103
+--- !u!1 &4269028444147233505
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2893056060160363563}
-  - component: {fileID: 711939892489353477}
+  - component: {fileID: 4375270572644936183}
+  - component: {fileID: 6367581083972860050}
   m_Layer: 0
   m_Name: Pickup_Sprite
   m_TagString: Untagged
@@ -17,29 +17,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2893056060160363563
+--- !u!4 &4375270572644936183
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6483412549953819103}
+  m_GameObject: {fileID: 4269028444147233505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8214395902678402172}
+  m_Father: {fileID: 2212576876256652730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &711939892489353477
+--- !u!212 &6367581083972860050
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6483412549953819103}
+  m_GameObject: {fileID: 4269028444147233505}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4754397612918832516, guid: b37dd17283006c4488fbe2b44452fe42, type: 3}
+  m_Sprite: {fileID: -8931857207964360873, guid: f10ca4bbe79c59b4a824ae8ba109d002, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &8115345110527103518
+--- !u!1 &7701535263457379448
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,40 +99,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8214395902678402172}
-  - component: {fileID: 3818226307927772987}
-  - component: {fileID: 7948797515272394088}
-  - component: {fileID: 2158389748023926616}
+  - component: {fileID: 2212576876256652730}
+  - component: {fileID: 6613604462844041074}
+  - component: {fileID: 5762773736801509590}
+  - component: {fileID: 4981707448581792022}
   m_Layer: 0
-  m_Name: HealthPickup
+  m_Name: ItemPickup_Scrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8214395902678402172
+--- !u!4 &2212576876256652730
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115345110527103518}
+  m_GameObject: {fileID: 7701535263457379448}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2893056060160363563}
+  - {fileID: 4375270572644936183}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &3818226307927772987
+--- !u!135 &6613604462844041074
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115345110527103518}
+  m_GameObject: {fileID: 7701535263457379448}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -147,28 +147,28 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7948797515272394088
+--- !u!114 &5762773736801509590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115345110527103518}
+  m_GameObject: {fileID: 7701535263457379448}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af64cfa92bdfdad40ae1d6dcd9e6a457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupComponent
-  pickupType: 0
-  pickupAmount: 5
-  pickupItem: 10
---- !u!54 &2158389748023926616
+  pickupType: 9
+  pickupAmount: 1
+  pickupItem: 5
+--- !u!54 &4981707448581792022
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115345110527103518}
+  m_GameObject: {fileID: 7701535263457379448}
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
