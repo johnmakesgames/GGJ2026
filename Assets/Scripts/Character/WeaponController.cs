@@ -22,6 +22,10 @@ public class WeaponController : MonoBehaviour
 
     private InputAction shootAction;
 
+    public int GetAmmoInGun()
+    {
+        return ammo;
+    }
 
     void Start()
     {
@@ -102,6 +106,7 @@ public class WeaponController : MonoBehaviour
         if (hits.Count() <= 0)
         {
             Debug.Log("No Hit");
+            return null;
         }
 
         return hits[0].transform.root.gameObject.GetComponent<Health>();

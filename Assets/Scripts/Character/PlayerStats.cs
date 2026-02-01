@@ -99,6 +99,23 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    WeaponController weaponController;
+    public int AmmoRemainingCount
+    {
+        get
+        {
+            return weaponController.ammoStockpile;
+        }
+    }
+
+    public int AmmoInGunCount
+    {
+        get
+        {
+            return weaponController.GetAmmoInGun();
+        }
+    }
+
     private int peopleCured;
 
     [SerializeField]

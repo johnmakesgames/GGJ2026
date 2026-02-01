@@ -6,6 +6,8 @@ public class BaseExitZone : MonoBehaviour
 {
     [SerializeField]
     private string targetScene;
+    [SerializeField]
+    private Vector3 spawnPointInTargetScene;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,12 +27,19 @@ public class BaseExitZone : MonoBehaviour
         {
             if (collider.gameObject.tag == "Player")
             {
-                StartCoroutine(LoadAsyncScene());
+                //StartCoroutine(LoadAsyncScene(collider.gameObject));
+                LoadScene(collider.gameObject);
             }
         }
     }
 
-    IEnumerator LoadAsyncScene()
+    void LoadScene(GameObject player)
+    {
+        player.transform.position = spawnPointInTargetScene;
+        SceneManager.LoadScene(targetScene);
+    }
+
+    IEnumerator LoadAsyncScene(GameObject player)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(targetScene);
 
@@ -38,5 +47,7 @@ public class BaseExitZone : MonoBehaviour
         {
             yield return null;
         }
+        ;
+        player.transform.position = spawnPointInTargetScene;
     }
 }

@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: -8057156730865707075}
   - component: {fileID: 7206453869596347950}
   - component: {fileID: 34082057425816294}
+  - component: {fileID: 6368706885465451599}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -497,6 +498,20 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 0
-  pistolFireRate: 0.002
-  Ammo: 0
+  shotgonFireRate: 0.4
+  shotgonReloadTime: 1
+  ammoStockpile: 10
+  ammo: 2
   player: {fileID: 6339247546046854624}
+--- !u!114 &6368706885465451599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347220884982020832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ebd77c175d4184795b82050869700c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
