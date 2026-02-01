@@ -66,6 +66,25 @@ public class CraftingMachine : BaseMachine
         }
     }
 
+    public ItemTag GetRecipeResult(ItemTag item1, ItemTag item2)
+    {
+        ItemTag result = ItemTag.COUNT;
+
+        CraftingRecipe recipe = new CraftingRecipe(item1, item2);
+        CraftingRecipe reversedRecipe = new CraftingRecipe(item2, item1);
+
+        if (RecipeLookups.TryGetValue(recipe, out result))
+        {
+            return result;
+        }
+        else if (RecipeLookups.TryGetValue(reversedRecipe, out result))
+        {
+            return result;
+
+        }
+
+        return ItemTag.COUNT;
+    }
 
     public override bool UseMachine(object contextObj)
     {
