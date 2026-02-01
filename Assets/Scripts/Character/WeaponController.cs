@@ -24,6 +24,7 @@ public class WeaponController : MonoBehaviour
     
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip gunshotClip;
+    [SerializeField] private AudioClip emptyGunClip;
 
     public int GetAmmoInGun()
     {
@@ -58,7 +59,11 @@ public class WeaponController : MonoBehaviour
     private void TryShoot()
     {
         if (ammo == 0 && ammoStockpile == 0)
+        {
+            if(emptyGunClip != null)
+                audioSource.PlayOneShot(emptyGunClip);
             return;
+        }
 
         if (Time.time < delay)
             return;
