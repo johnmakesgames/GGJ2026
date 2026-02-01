@@ -88,6 +88,24 @@ public class WorldUIEntityComponent : MonoBehaviour
     {
         m_Source = sourceOfDmg;
         m_WorldUIType = damageEvent;
+
+        switch (damageEvent)
+        {
+            case WorldUIController.WorldUIType.DamageEvent:
+                Text.color = Color.red;
+                break;
+            case WorldUIController.WorldUIType.HealthGame:
+                Text.color = Color.green;
+                break;
+            case WorldUIController.WorldUIType.OxygenGain:
+                Text.color = Color.skyBlue;
+                break;
+            case WorldUIController.WorldUIType.Scavenge:
+                Text.color = Color.violet;
+                break;
+            default:
+                break;
+        }
     }
 
     public void UpdateText(string text, Vector3 position)
