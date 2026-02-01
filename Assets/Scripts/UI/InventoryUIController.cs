@@ -30,27 +30,17 @@ public class InventoryUIController : MonoBehaviour
         if (PlayerInventory)
         {
             var items = PlayerInventory.GetAllInventoryItems();
-            //int i = 0;
-            //foreach (var item in items)
-            //{
-            //    if ((int)item < InventoryItemUIPrefab.Length)
-            //    {
-            //        GameObject c = Object.Instantiate(InventoryItemUIPrefab[(int)item], this.gameObject.transform);
-            //        var handler = c.GetComponent<InventoryItemHandler>();
-            //        if (handler != null)
-            //        {
-            //            handler.Configure(item, i++);
-            //        }
-            //    }
-            //}
-
-            for (int i = 0; i < 24; ++i)
+            int i = 0;
+            foreach (var item in items)
             {
-                GameObject c = Object.Instantiate(InventoryItemUIPrefab[(int)ItemTag.Medkit], this.gameObject.transform);
-                var handler = c.GetComponent<InventoryItemHandler>();
-                if (handler != null)
+                if ((int)item < InventoryItemUIPrefab.Length)
                 {
-                    handler.Configure(ItemTag.Medkit, i);
+                    GameObject c = Object.Instantiate(InventoryItemUIPrefab[(int)item], this.gameObject.transform);
+                    var handler = c.GetComponent<InventoryItemHandler>();
+                    if (handler != null)
+                    {
+                        handler.Configure(item, i++);
+                    }
                 }
             }
             m_InventorySelector = PlayerInventory.TryConsumeInventorySelection();
