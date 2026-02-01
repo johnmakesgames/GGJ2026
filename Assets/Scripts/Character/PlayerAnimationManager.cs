@@ -20,12 +20,12 @@ public class PlayerAnimationManager : MonoBehaviour
     public void SetIsPlayer(bool isPlayer)
     {
         this.isPlayer = isPlayer;
-        animator.SetBool("IsPlayer", isPlayer);
     }
 
     private void Update()
     {
         timeSinceShot += Time.deltaTime;
+        animator.SetBool("IsPlayer", isPlayer);
     }
 
     public void SetLastFrameMovement(Vector3 movement)

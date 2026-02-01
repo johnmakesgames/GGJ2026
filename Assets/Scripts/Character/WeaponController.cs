@@ -6,14 +6,16 @@ using UnityEngine.InputSystem;
 public class WeaponController : MonoBehaviour
 {
     public Transform weapon;
-    public float maxDistance = 20f;
+    public float maxDistance = 40f;
     public LayerMask hitMask;
 
-    [SerializeField] private float pistolFireRate = 0.002f;
-    float delay = 0.0f;
+    [SerializeField] private float shotgonFireRate = 0.4f;
+    [SerializeField] private float shotgonReloadTime = 1f;
+    private float delay;
 
-    [SerializeField] public int Ammo;
+    [SerializeField] public int ammoStockpile = 10;
 
+    [SerializeField] private int ammo = 2;
 
     [SerializeField] Collider player;
 
@@ -27,7 +29,13 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-        if (shootAction.ReadValue<float>() > 0)
+        if (ammoStockpile > 0 && ammo == 0)
+        {
+            Reload();
+            return;
+        }
+        
+        if (shootAction.WasPressedThisFrame())
         {
             TryShoot();
         }
@@ -35,17 +43,33 @@ public class WeaponController : MonoBehaviour
 
     private void TryShoot()
     {
-        if (Time.time < delay)
+        if (ammo == 0 && ammoStockpile == 0)
             return;
 
-        delay += Time.deltaTime + pistolFireRate;
+        if (Time.time < delay)
+            return;
+        
+        delay = Time.time + shotgonFireRate;
+
         Shoot();
+    }
+
+    void Reload()
+    {
+        delay = Time.time + shotgonReloadTime;
+        Debug.Log("Reloading" + delay);
+
+        ammo += 2;
+        ammoStockpile -= 2;
+
+        Debug.Log("Ammo: " + ammo + " Stock: " + ammoStockpile);
     }
 
 
     void Shoot()
     {
-        Ammo--;
+        ammo--;
+
         var scrPoint = new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, 0);
         Ray ray = Camera.main.ScreenPointToRay(scrPoint);
         RaycastHit hit;

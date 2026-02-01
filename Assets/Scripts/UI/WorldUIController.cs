@@ -72,7 +72,7 @@ public class WorldUIController : MonoBehaviour
         //Can you really have no free UI elements....
         if(foundElementForWorldUI)
         {
-            foundElementForWorldUI.ShowWorldUI(String.Format("{0:G1}", dmg).ToString(), position, sourceOfDmg, WorldUIType.DamageEvent);
+            foundElementForWorldUI.ShowWorldUI($"-{dmg}", position, sourceOfDmg, WorldUIType.DamageEvent);
         }
 
         return foundElementForWorldUI; //Maybe someone can properly reuse this element
