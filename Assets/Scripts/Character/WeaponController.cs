@@ -6,11 +6,11 @@ using UnityEngine.InputSystem;
 public class WeaponController : MonoBehaviour
 {
     public Transform weapon;
-    public float maxDistance = 20f;
+    public float maxDistance = 40f;
     public LayerMask hitMask;
 
-    [SerializeField] private float pistolFireRate = 0.002f;
-    float delay = 0.0f;
+    [SerializeField] private float shotgonFireRate = 0.4f;
+    private float delay;
 
     [SerializeField] public int Ammo;
 
@@ -27,7 +27,7 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-        if (shootAction.ReadValue<float>() > 0)
+        if (shootAction.WasPressedThisFrame())
         {
             TryShoot();
         }
@@ -38,7 +38,7 @@ public class WeaponController : MonoBehaviour
         if (Time.time < delay)
             return;
 
-        delay += Time.deltaTime + pistolFireRate;
+        delay += Time.deltaTime + shotgonFireRate;
         Shoot();
     }
 
