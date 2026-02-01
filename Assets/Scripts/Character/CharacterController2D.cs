@@ -21,6 +21,14 @@ public class CharacterController2D : MonoBehaviour
 
     [SerializeField]
     PlayerAnimationManager playerAnimationManager;
+    
+    [SerializeField] private AudioSource audioSource;
+    
+    [SerializeField] private AudioClip footstepClip;
+    
+    [SerializeField] private float footstepDelay;
+    private float delay;
+
 
     // Movement inputs
     InputAction moveAction;
@@ -66,6 +74,14 @@ public class CharacterController2D : MonoBehaviour
         if (movementInput.x < 0.0f)
         {
             direction = new Vector3(-1, 0, -1);
+        }
+
+        if (direction != Vector3.zero && Time.time >= delay)
+        {
+            delay = Time.time + footstepDelay;
+            
+            if(footstepClip != null)
+                audioSource.PlayOneShot(footstepClip);
         }
 
         return direction;
