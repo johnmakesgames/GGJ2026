@@ -159,7 +159,6 @@ public class WorldUIController : MonoBehaviour
 
             foundElementForWorldUI.UpdateText(itemGainedStr, source.gameObject.transform.position);
         }
-        throw new NotImplementedException();
     }
 
 
