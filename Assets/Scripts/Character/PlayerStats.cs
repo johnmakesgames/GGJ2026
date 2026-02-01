@@ -145,13 +145,16 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        CurrentOxygen -= OxygenUsagePerSecond * Time.deltaTime;
-        CurrentHealth -= DamageOverTimePerSecond * Time.deltaTime;
-
-        if (SceneManager.GetActiveScene().name == "BaseScene")
+        if (SceneManager.GetActiveScene().name == "MainMenu"
+            || SceneManager.GetActiveScene().name == "DeathScene"
+            || SceneManager.GetActiveScene().name == "VictoryScene")
         {
             CurrentOxygen = MaximumOxygen;
+            CurrentHealth = MaximumHealth;
         }
+
+        CurrentOxygen -= OxygenUsagePerSecond * Time.deltaTime;
+        CurrentHealth -= DamageOverTimePerSecond * Time.deltaTime;
     }
 
     void TakeDamage(float dmg)
