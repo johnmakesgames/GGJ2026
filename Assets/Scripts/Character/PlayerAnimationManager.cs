@@ -25,7 +25,6 @@ public class PlayerAnimationManager : MonoBehaviour
     {
         animator.SetFloat("MoveSpeed", movement.magnitude);
         animator.SetFloat("MoveDirection", movement.z);
-        animator.SetFloat("TimeSinceShot", timeSinceShot);
 
         if (movement.x > 0)
         {
@@ -38,6 +37,24 @@ public class PlayerAnimationManager : MonoBehaviour
 
         if (attackAction.ReadValue<float>() > 0.0f & timeSinceShot >= 0.5f)
         {
+            Vector2 mouseLocation = Mouse.current.position.ReadValue();
+            mouseLocation.x /= Screen.width;
+            mouseLocation.y /= Screen.height;
+
+            mouseLocation.x -= 0.5f;
+            mouseLocation.y -= 0.5f;
+
+            if (mouseLocation.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if (mouseLocation.x < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+
+            animator.SetFloat("MoveDirection", mouseLocation.y);
+
             animator.SetTrigger("Shoot");
             timeSinceShot = 0;
         }

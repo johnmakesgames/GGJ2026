@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController2D
   player: {fileID: 0}
-  maxViewDistance: 10
+  maxViewDistance: 50
   movementSpeed: 850
   touchDamage: 10
   playerAnimationManager: {fileID: 7215483158346206221}
