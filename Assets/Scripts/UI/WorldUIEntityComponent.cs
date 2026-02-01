@@ -78,16 +78,21 @@ public class WorldUIEntityComponent : MonoBehaviour
         return sourceOfDmg == GetSourceOfWorldUI() && damageEvent == GetUIType();
     }
 
-    internal void ShowWorldUI(string msg, Vector3 position, GameObject sourceOfDmg, WorldUIController.WorldUIType damageEvent)
+    internal void ShowWorldUI(Vector3 position, GameObject sourceOfDmg, WorldUIController.WorldUIType damageEvent)
+    {
+        gameObject.transform.position = position;
+        ConfigureType(sourceOfDmg, damageEvent);
+    }
+
+    public void ConfigureType(GameObject sourceOfDmg, WorldUIController.WorldUIType damageEvent)
     {
         m_Source = sourceOfDmg;
         m_WorldUIType = damageEvent;
-        gameObject.transform.position = position;
-        UpdateText(msg);
     }
 
-    void UpdateText(string text)
+    public void UpdateText(string text, Vector3 position)
     {
+        gameObject.transform.position = position;
         Text.SetText(text);
         m_AnimationTime = 0;
     }

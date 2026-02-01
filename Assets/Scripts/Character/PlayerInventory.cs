@@ -134,6 +134,32 @@ public class PlayerInventory : MonoBehaviour
         return success;
     }
 
+    public bool HasAction(ItemTag item)
+    {
+        switch (item)
+        {
+            case ItemTag.ExtraOxygenTank:
+            case ItemTag.Medkit:
+            case ItemTag.Cure:
+                return true;
+                break;
+            case ItemTag.Can:
+            case ItemTag.Gunpowder:
+            case ItemTag.Food:
+            case ItemTag.ScrapMetal:
+            case ItemTag.COUNT:
+            default:
+                break;
+        }
+        return false;
+    }
+
+
+    public bool CanDelete(ItemTag item)
+    {
+        return item != ItemTag.COUNT;
+    }
+
     public void UseItem(ItemTag item)
     {
         if (playerStats)

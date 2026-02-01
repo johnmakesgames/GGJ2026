@@ -42,7 +42,7 @@ public class BaseMachine : MonoBehaviour
         return false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == null)
             return;

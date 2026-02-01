@@ -4,14 +4,18 @@ using UnityEngine;
 public class InventoryItemHandler : MonoBehaviour
 {
     private InventoryUIController InventoryController;
+    private CanvasGroup ItemCanvasGroup;
 
 
     public ItemTag m_Tag;
-    public int m_ItemId = 0;
+    private int m_ItemId = 0;
+
+    private bool Valid = true;
 
     private void Awake()
     {
         InventoryController = GameObject.FindFirstObjectByType<InventoryUIController>();
+        ItemCanvasGroup = GameObject.FindFirstObjectByType<CanvasGroup>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,6 +37,23 @@ public class InventoryItemHandler : MonoBehaviour
 
     public void OnClick()
     {
-        InventoryController.Selected(this);
+        if (Valid)
+        {
+            InventoryController.Selected(this);
+        }
+    }
+
+    public bool IsViableItem()
+    {
+        return Valid;
+    }
+
+    public void Hide()
+    {
+        if(ItemCanvasGroup)
+        {
+            ItemCanvasGroup.alpha = 0;
+        }
+        Valid = false;
     }
 }

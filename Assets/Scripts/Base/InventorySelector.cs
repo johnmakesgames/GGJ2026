@@ -18,7 +18,7 @@ public class InventorySelector : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        inventoryRef = GameObject.FindAnyObjectByType<PlayerInventory>();
+        inventoryRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
     }
 
     // Update is called once per frame
@@ -36,6 +36,11 @@ public class InventorySelector : MonoBehaviour
             inventoryRef.AddInventorySelectionListener(this); //Auto removed when inventory uses the selection (even if no selection)
             openSesame.OpenInventory_Click();
         }
+    }
+
+    public bool HasValidSelection()
+    {
+        return Selection != ItemTag.COUNT;
     }
 
     public ItemTag GetCurrentSelection()

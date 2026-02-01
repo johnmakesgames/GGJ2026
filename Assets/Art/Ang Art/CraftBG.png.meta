@@ -1,25 +1,7 @@
 fileFormatVersion: 2
-guid: 633716c7fc6018847ab042e66f9dff4d
+guid: 64c8690cfb622724ab96a350a7a1ba0c
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3781910019033479378
-    second: Idle1_0
-  - first:
-      213: -1461846728506201224
-    second: Idle1_1
-  - first:
-      213: 2274338124900576597
-    second: Idle1_2
-  - first:
-      213: 5965835319419519687
-    second: Idle1_3
-  - first:
-      213: 1112028525058818275
-    second: Idle1_4
-  - first:
-      213: 6573097036275413300
-    second: Idle1_5
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,12 +34,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -124,40 +106,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle1_0
+      name: CraftBG_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 512
+        width: 1035
+        height: 378
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e27c40700e4f38bc0800000000000000
-      internalID: -3781910019033479378
+      spriteID: 51a27cfe04fb12346b467732067f4ad2
+      internalID: 321968463
       vertices: []
       indices: 
       edges: []
@@ -166,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 21982b0e9cd34f04c83fdbaf93dca2f3
+    spriteID: 3f3cef56cf7577e45934e796c6171acb
     internalID: 0
     vertices: []
     indices: 
@@ -176,9 +145,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1035.0,"y":378.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Idle1_0: -3781910019033479378
+      CraftBG_0: 321968463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
