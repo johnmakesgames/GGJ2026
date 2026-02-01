@@ -62,13 +62,8 @@ public class WeaponController : MonoBehaviour
 
             if (enemyHealth != null)
             {
-                Debug.Log("Hit");
                 enemyHealth.CurrentHealth--;
                 Debug.Log("Enemy health: " + enemyHealth.CurrentHealth);
-            }
-            else
-            {
-                Debug.Log("Miss");
             }
         }
     }

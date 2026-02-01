@@ -113,6 +113,11 @@ public class EnemyController2D : MonoBehaviour
 
     void OnDeath()
     {
+        if (!isCured)
+        {
+            GameObject.FindGameObjectWithTag("ItemDropper").GetComponent<ItemDropSpawner>().DropRandomItemAtSpot(this.transform);
+        }
+
         this.GetComponent<Health>().OnDamage -= OnDamage;
         this.GetComponent<Health>().OnDeath -= OnDeath;
         Destroy(this.gameObject);
