@@ -8,6 +8,7 @@ TagManager:
   - PlayerUI
   - WorldUI
   - ItemDropper
+  - Enemy
   layers:
   - Default
   - TransparentFX
