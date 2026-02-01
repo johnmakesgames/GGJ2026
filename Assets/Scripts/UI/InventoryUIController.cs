@@ -12,6 +12,7 @@ public class InventoryUIController : MonoBehaviour
     PlayerInventory PlayerInventory;
 
     InventoryItemHandler m_CurrentItem = null;
+    InventorySelector m_InventorySelector = null;
 
     bool Closing = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +38,8 @@ public class InventoryUIController : MonoBehaviour
                     }
                 }
             }
+
+            m_InventorySelector = PlayerInventory.TryConsumeInventorySelection();
         }
     }
 
@@ -48,7 +51,13 @@ public class InventoryUIController : MonoBehaviour
 
     void RefreshOptions()
     {
+        if(m_InventorySelector)
+        {
+            m_InventorySelector.SetItemToShow(m_CurrentItem ? m_CurrentItem.m_Tag : ItemTag.COUNT);
+            CloseInventoryScene();
+        }
 
+        //TODO Present options on what to do with the item
     }
 
     // Update is called once per frame

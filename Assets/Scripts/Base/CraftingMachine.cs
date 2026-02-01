@@ -20,6 +20,13 @@ public class CraftingMachine : BaseMachine
     private Dictionary<CraftingRecipe, ItemTag> RecipeLookups;
     [SerializeField]
     TMPro.TMP_Dropdown[] UISelectionDropdowns;
+
+    //Component that handles displaying selected item  
+    //Pretty hacky - when inventory scene opens if there is a selector (set on inventory) it changes the inventory to close and set
+    [SerializeField]
+    InventorySelector ItemA;
+    [SerializeField]
+    InventorySelector ItemB;
  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

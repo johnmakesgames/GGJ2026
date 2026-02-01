@@ -6,8 +6,8 @@ public class InventoryItemHandler : MonoBehaviour
     private InventoryUIController InventoryController;
 
 
-    ItemTag m_Tag;
-    int m_ItemId = 0;
+    public ItemTag m_Tag;
+    public int m_ItemId = 0;
 
     private void Awake()
     {
