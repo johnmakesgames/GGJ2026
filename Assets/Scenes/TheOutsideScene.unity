@@ -119,59 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &38786718
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 38786720}
-  - component: {fileID: 38786719}
-  m_Layer: 0
-  m_Name: LootDropController
-  m_TagString: ItemDropper
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &38786719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38786718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 316df7f08a0bc9340803e0a7def884ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemDropSpawner
-  pickupSpawns:
-  - {fileID: 8314562891984544913, guid: dac272862c737a642a63c99781143a57, type: 3}
-  - {fileID: 3028290533540979844, guid: 9540b3f2dc0cddd4e8d2d88ae56fbd49, type: 3}
-  - {fileID: 8115345110527103518, guid: 1d03889b6d8cebc4894199cafc58a10c, type: 3}
-  - {fileID: 5369652773995004181, guid: 9340ac99b418d9348bb99cb09680d626, type: 3}
-  - {fileID: 1316561382523034651, guid: e2e7566f3dde27344b18ce30d3d33225, type: 3}
-  - {fileID: 1969218039697147852, guid: ccd9724509ce3254c9e46648903ee1ea, type: 3}
-  - {fileID: 7701535263457379448, guid: 0174224d0449ff84c83ba3977b8d823e, type: 3}
-  - {fileID: 3564735170798308396, guid: ef930af21ee112c459693071b8826953, type: 3}
---- !u!4 &38786720
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38786718}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &55920653
 Mesh:
   m_ObjectHideFlags: 0
@@ -29084,6 +29031,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdf02dd64f144d54580b7b6c1c9051ea, type: 3}
+--- !u!1001 &3945300055096817429
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735643126756971890, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490082645114600801, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
+      propertyPath: m_Name
+      value: LootDropController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 061f996779bbdf0469113c7651581d1d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -29107,4 +29111,4 @@ SceneRoots:
   - {fileID: 1850904330}
   - {fileID: 1104826262}
   - {fileID: 876214060}
-  - {fileID: 38786720}
+  - {fileID: 3945300055096817429}
