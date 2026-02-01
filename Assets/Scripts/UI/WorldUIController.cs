@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.Windows;
 
 public class WorldUIController : MonoBehaviour
@@ -51,26 +52,37 @@ public class WorldUIController : MonoBehaviour
         }
     }
 
-    internal WorldUIEntityComponent ShowDamage(float dmg, Vector3 position, GameObject sourceOfDmg, bool reuseDamageForSameSource)
+    private void ReturnToFreePool(WorldUIEntityComponent element)
+    {
+        ActiveElements.Remove(element);
+        FreeElements.Push(element);
+    }
+
+    WorldUIEntityComponent GetUIWorldElement(GameObject source, bool reuseElement)
     {
         WorldUIEntityComponent foundElementForWorldUI = null;
         //look through active elements for a matching one
-        if (reuseDamageForSameSource)
+        if (reuseElement)
         {
-           foundElementForWorldUI = ActiveElements.FindLast(x => x.CanReuse(sourceOfDmg, WorldUIType.DamageEvent));
+            foundElementForWorldUI = ActiveElements.FindLast(x => x.CanReuse(source, WorldUIType.DamageEvent));
         }
 
-        if(foundElementForWorldUI == null)
+        if (foundElementForWorldUI == null)
         {
-            if(FreeElements.TryPop(out foundElementForWorldUI))
+            if (FreeElements.TryPop(out foundElementForWorldUI))
             {
                 ActiveElements.Add(foundElementForWorldUI);
                 foundElementForWorldUI.gameObject.SetActive(true);
             }
         }
+        return foundElementForWorldUI;
+    }
 
+    internal WorldUIEntityComponent ShowDamage(float dmg, Vector3 position, GameObject sourceOfDmg, bool reuseDamageForSameSource)
+    {
+        WorldUIEntityComponent foundElementForWorldUI = GetUIWorldElement(sourceOfDmg, reuseDamageForSameSource);
         //Can you really have no free UI elements....
-        if(foundElementForWorldUI)
+        if (foundElementForWorldUI)
         {
             foundElementForWorldUI.ShowWorldUI($"-{dmg}", position, sourceOfDmg, WorldUIType.DamageEvent);
         }
@@ -78,9 +90,88 @@ public class WorldUIController : MonoBehaviour
         return foundElementForWorldUI; //Maybe someone can properly reuse this element
     }
 
-    private void ReturnToFreePool(WorldUIEntityComponent element)
+
+    internal void ShowItemPickedup(ItemTag item, GameObject source)
     {
-        ActiveElements.Remove(element);
-        FreeElements.Push(element);
+        bool resueElement = false;
+        WorldUIEntityComponent foundElementForWorldUI = GetUIWorldElement(source, resueElement);
+        if (foundElementForWorldUI)
+        {
+            string itemGainedStr = "Picked up ";
+            switch (item)
+            {
+                case ItemTag.ExtraOxygenTank:
+                    {
+                        itemGainedStr += "Oxygen Tank";
+                        break;
+                    }
+                case ItemTag.Can:
+                    {
+                        itemGainedStr += "Can";
+                        break;
+                    }
+                case ItemTag.Plant:
+                    {
+                        itemGainedStr += "Plant!";
+                        break;
+                    }
+                case ItemTag.Gunpowder:
+                    {
+                        itemGainedStr += "GUN POWDER";
+                        break;
+                    }
+                case ItemTag.Food:
+                    {
+                        itemGainedStr += "Food";
+                        break;
+                    }
+                case ItemTag.ScrapMetal:
+                    {
+                        itemGainedStr += "Scrape Metal";
+                        break;
+                    }
+                case ItemTag.Medkit:
+                    {
+                        itemGainedStr += "Med Kit";
+                        break;
+                    }
+                case ItemTag.Ammo:
+                    {
+                        itemGainedStr += "Ammo";
+                        break;
+                    }
+                case ItemTag.Slug:
+                    {
+                        itemGainedStr += "Slug";
+                        break;
+                    }
+                case ItemTag.Cure:
+                    {
+                        itemGainedStr += "Cure";
+                        break;
+                    }
+                default:
+                    {
+                        throw new NotImplementedException("Missing item type enum");
+                    }
+            } 
+
+            foundElementForWorldUI.ShowWorldUI(itemGainedStr, source.gameObject.transform.position, source, WorldUIType.Scavenge);
+        }
+        throw new NotImplementedException();
     }
+
+
+    internal WorldUIEntityComponent ShowStatGained(string source, GameObject sourceObj, WorldUIType type)
+    {
+        WorldUIEntityComponent foundElementForWorldUI = GetUIWorldElement(sourceObj, false);
+        //Can you really have no free UI elements....
+        if (foundElementForWorldUI)
+        {
+            foundElementForWorldUI.ShowWorldUI(source, sourceObj.transform.position, sourceObj, type);
+        }
+
+        return foundElementForWorldUI; //Maybe someone can properly reuse this element
+    }
+
 }
