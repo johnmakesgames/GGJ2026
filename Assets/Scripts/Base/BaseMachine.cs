@@ -59,7 +59,7 @@ public class BaseMachine : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public virtual void OnTriggerExit(Collider other)
     {
         if (other.gameObject == null)
             return;
