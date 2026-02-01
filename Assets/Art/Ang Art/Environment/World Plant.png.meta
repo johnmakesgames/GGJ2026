@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 99d51e7cbb072de41a6ba718eb735b75
+guid: 5b690915e7492b64dbcac96ade1a4499
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1911633405228054300
-    second: Gunpowder_0
+      213: -2180079605172395315
+    second: World Plant_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gunpowder_0
+      name: World Plant_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 22
-        height: 29
+        x: 116
+        y: 56
+        width: 23
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e88c94db838875e0800000000000000
-      internalID: -1911633405228054300
+      spriteID: dc220af462dceb1e0800000000000000
+      internalID: -2180079605172395315
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gunpowder_0: -1911633405228054300
+      World Plant_0: -2180079605172395315
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
