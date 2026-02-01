@@ -18,11 +18,9 @@ struct CraftingRecipe
 public class CraftingMachine : BaseMachine
 {
     private Dictionary<CraftingRecipe, ItemTag> RecipeLookups;
-    [SerializeField]
-    TMPro.TMP_Dropdown[] UISelectionDropdowns;
 
     //Component that handles displaying selected item  
-    //Pretty hacky - when inventory scene opens if there is a selector (set on inventory) it changes the inventory to close and set
+    //Pretty hacky - when inventory scene opens if there is a selector (set on inventory) it changes the inventory to close and sets value on selector
     [SerializeField]
     InventorySelector ItemA;
     [SerializeField]
@@ -41,11 +39,8 @@ public class CraftingMachine : BaseMachine
         //Remove string for ItemTag.Count which should always be at the end.
         possibleItemStrings.RemoveAt(possibleItemStrings.Count - 1);
 
-        for (int i = 0; i < UISelectionDropdowns.Length; i++)
-        {
-            UISelectionDropdowns[i].ClearOptions();
-            UISelectionDropdowns[i].AddOptions(possibleItemStrings);
-        }
+        ItemA.ClearSelection();
+        ItemB.ClearSelection();
 
         possibleItemStrings.Clear();
     }
@@ -58,11 +53,11 @@ public class CraftingMachine : BaseMachine
 
     public void OnCraftButtonPressed()
     {
-        if (UISelectionDropdowns.Length >= 2)
+        if (ItemA && ItemB && ItemA.HasValidSelection() && ItemB.HasValidSelection())
         {
             CraftingRecipe recipe = new CraftingRecipe();
-            recipe.ComponentA = (ItemTag)UISelectionDropdowns[0].value;
-            recipe.ComponentB = (ItemTag)UISelectionDropdowns[1].value;
+            recipe.ComponentA = (ItemTag)ItemA.GetCurrentSelection();
+            recipe.ComponentB = (ItemTag)ItemB.GetCurrentSelection();
             UseMachine(recipe);
         }
         else

@@ -38,6 +38,11 @@ public class InventorySelector : MonoBehaviour
         }
     }
 
+    public bool HasValidSelection()
+    {
+        return Selection != ItemTag.COUNT;
+    }
+
     public ItemTag GetCurrentSelection()
     {
         return Selection;

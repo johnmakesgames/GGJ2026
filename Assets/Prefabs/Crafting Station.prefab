@@ -707,7 +707,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -3321,8 +3321,8 @@ MonoBehaviour:
   UISelectionDropdowns:
   - {fileID: 1225778461229353436}
   - {fileID: 6326903906375786412}
-  ItemA: {fileID: 0}
-  ItemB: {fileID: 0}
+  ItemA: {fileID: 8248007027016716643}
+  ItemB: {fileID: 5876546136666258882}
 --- !u!33 &1401396266368205931
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3524,6 +3524,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2312483954067337384, guid: d654055a848e3c3448e5c9f841c38073, type: 3}
   m_PrefabInstance: {fileID: 1330766917751189197}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5876546136666258882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4898362670652658447, guid: d654055a848e3c3448e5c9f841c38073, type: 3}
+  m_PrefabInstance: {fileID: 1330766917751189197}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74b98610f7b15240b55d60e543481b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySelector
 --- !u!1001 &3570426883961569900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3626,3 +3637,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2312483954067337384, guid: d654055a848e3c3448e5c9f841c38073, type: 3}
   m_PrefabInstance: {fileID: 3570426883961569900}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8248007027016716643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4898362670652658447, guid: d654055a848e3c3448e5c9f841c38073, type: 3}
+  m_PrefabInstance: {fileID: 3570426883961569900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74b98610f7b15240b55d60e543481b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySelector
