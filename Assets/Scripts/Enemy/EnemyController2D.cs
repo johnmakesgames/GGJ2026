@@ -27,8 +27,15 @@ public class EnemyController2D : MonoBehaviour
 
     [SerializeField]
     SpriteRenderer spriteRenderer;
-
     public bool isCured;
+
+    private WorldUIController worldUIController;
+
+    ~EnemyController2D()
+    {
+        this.GetComponent<Health>().OnDamage -= OnDamage;
+        this.GetComponent<Health>().OnDeath -= OnDeath;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,6 +46,8 @@ public class EnemyController2D : MonoBehaviour
 
         this.GetComponent<Health>().OnDamage += OnDamage;
         this.GetComponent<Health>().OnDeath += OnDeath;
+
+        worldUIController = GameObject.FindGameObjectWithTag("WorldUI").GetComponent<WorldUIController>();
 
         isCured = false;
 
@@ -106,9 +115,9 @@ public class EnemyController2D : MonoBehaviour
         spriteRenderer.color = newColor;
     }
 
-    void OnDamage()
+    void OnDamage(float dmg)
     {
-        // Do something maybe sound or flash or something
+        worldUIController.ShowDamage(dmg, gameObject.transform.position, this.gameObject, false);
     }
 
     void OnDeath()
@@ -142,6 +151,7 @@ public class EnemyController2D : MonoBehaviour
         }
     }
 
+    float timeSinceLastHitTick = 0;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == player)
@@ -150,6 +160,33 @@ public class EnemyController2D : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.CurrentHealth -= touchDamage;
+                timeSinceLastHitTick = 0;
+            }
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        timeSinceLastHitTick += Time.deltaTime;
+        if (collision.gameObject == player && timeSinceLastHitTick >= 0.5f)
+        {
+            PlayerStats playerHealth = player.GetComponent<PlayerStats>();
+            if (playerHealth != null)
+            {
+                playerHealth.CurrentHealth -= touchDamage;
+                timeSinceLastHitTick = 0;
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject == player && timeSinceLastHitTick >= 0.5f)
+        {
+            PlayerStats playerHealth = player.GetComponent<PlayerStats>();
+            if (playerHealth != null)
+            {
+                timeSinceLastHitTick = 0;
             }
         }
     }

@@ -7,9 +7,12 @@ public class InventoryUIController : MonoBehaviour
 {
     InputAction OpenInventoryAction;
 
-    public GameObject InventoryItemUIPrefab;
+    public GameObject[] InventoryItemUIPrefab;
 
     PlayerInventory PlayerInventory;
+
+    InventoryItemHandler m_CurrentItem = null;
+    InventorySelector m_InventorySelector = null;
 
     bool Closing = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,14 +22,42 @@ public class InventoryUIController : MonoBehaviour
         OpenInventoryAction.Enable();
 
         PlayerInventory = GameObject.FindAnyObjectByType<PlayerInventory>();
-        if (InventoryItemUIPrefab && PlayerInventory)
+        if (PlayerInventory)
         {
             var items = PlayerInventory.GetAllInventoryItems();
+            int i = 0;
             foreach (var item in items)
             {
-                Object.Instantiate(InventoryItemUIPrefab, this.gameObject.transform);
+                if ((int)item < InventoryItemUIPrefab.Length)
+                {
+                    GameObject c = Object.Instantiate(InventoryItemUIPrefab[(int)item], this.gameObject.transform);
+                    var handler = c.GetComponent<InventoryItemHandler>();
+                    if (handler != null)
+                    {
+                        handler.Configure(item, i);
+                    }
+                }
             }
+
+            m_InventorySelector = PlayerInventory.TryConsumeInventorySelection();
         }
+    }
+
+    public void Selected(InventoryItemHandler handler)
+    {
+        m_CurrentItem = handler;
+        RefreshOptions();
+    }
+
+    void RefreshOptions()
+    {
+        if(m_InventorySelector)
+        {
+            m_InventorySelector.SetItemToShow(m_CurrentItem ? m_CurrentItem.m_Tag : ItemTag.COUNT);
+            CloseInventoryScene();
+        }
+
+        //TODO Present options on what to do with the item
     }
 
     // Update is called once per frame

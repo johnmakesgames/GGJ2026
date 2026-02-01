@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -82,7 +83,13 @@ public class PlayerStats : MonoBehaviour
             }
             else
             {
+                TakeDamage(healthComponent.CurrentHealth - value);
                 healthComponent.CurrentHealth = value;
+            }
+
+            if (healthComponent.CurrentHealth <= 0)
+            {
+                SceneManager.LoadScene("DeathScene");
             }
 
             if (playerStatsUI != null)
@@ -117,13 +124,11 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         CurrentOxygen -= OxygenUsagePerSecond * Time.deltaTime;
-
-        TakeDamage(DamageOverTimePerSecond * Time.deltaTime);
+        CurrentHealth -= DamageOverTimePerSecond * Time.deltaTime;
     }
 
     void TakeDamage(float dmg)
     {
-        CurrentHealth -= dmg;
         if (worldUIController != null && CurrentHealth > 0.0f && dmg != 0)
         {
             bool reuseDamageForSameSource = true;
@@ -152,5 +157,10 @@ public class PlayerStats : MonoBehaviour
     public void SignalCured()
     {
         peopleCured++;
+
+        if (peopleCured > 5)
+        {
+            SceneManager.LoadScene("VictoryScene");
+        }
     }
 }

@@ -177,4 +177,18 @@ public class PlayerInventory : MonoBehaviour
             }
         }
     }
+
+    private InventorySelector m_InventorySelection;
+
+    public void AddInventorySelectionListener(InventorySelector selector)
+    {
+        m_InventorySelection = selector;
+    }
+
+    public InventorySelector TryConsumeInventorySelection()
+    {
+        InventorySelector selection = m_InventorySelection;
+        m_InventorySelection = null;
+        return selection;
+    }
 }

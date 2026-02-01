@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 7366164751621773085}
   - component: {fileID: 7765178656785084763}
   - component: {fileID: 1689199741933015163}
+  - component: {fileID: -4143510183330306763}
   m_Layer: 5
   m_Name: UIHudCanvas
   m_TagString: PlayerUI
@@ -274,6 +275,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OxygenBarControl
   OxygenSlider: {fileID: 6242116971880933225}
   HealthSlider: {fileID: 6659125800950995004}
+--- !u!114 &-4143510183330306763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072814442796443144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ebd77c175d4184795b82050869700c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
 --- !u!1 &2392690292030034912
 GameObject:
   m_ObjectHideFlags: 0

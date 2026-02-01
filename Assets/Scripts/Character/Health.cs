@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
             {
                 if (OnDamage != null)
                 {
-                    OnDamage();
+                    OnDamage(health - value);
                 }
             }
 
@@ -50,7 +50,7 @@ public class Health : MonoBehaviour
     }
 
     public Action OnDeath;
-    public Action OnDamage;
+    public Action<float> OnDamage;
     public Action OnHeal;
 
     public void Start()
