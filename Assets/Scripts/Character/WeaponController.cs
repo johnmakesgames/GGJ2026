@@ -22,6 +22,8 @@ public class WeaponController : MonoBehaviour
 
     private InputAction shootAction;
 
+    private WeaponControl WeaponControlUI;
+
     public int GetAmmoInGun()
     {
         return ammo;
@@ -35,6 +37,9 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         shootAction = InputSystem.actions.FindAction("Attack");
+
+        WeaponControlUI = Object.FindFirstObjectByType<WeaponControl>();
+        RefreshWeaponUI();
     }
 
     void Update()
@@ -73,6 +78,8 @@ public class WeaponController : MonoBehaviour
         ammoStockpile -= 2;
 
         Debug.Log("Ammo: " + ammo + " Stock: " + ammoStockpile);
+
+        RefreshWeaponUI();
     }
 
 
@@ -100,6 +107,8 @@ public class WeaponController : MonoBehaviour
                 Debug.Log("Enemy health: " + enemyHealth.CurrentHealth);
             }
         }
+
+        RefreshWeaponUI();
     }
 
     Health EnemyHit(Vector3 hitPoint)
@@ -115,5 +124,13 @@ public class WeaponController : MonoBehaviour
         }
 
         return hits[0].transform.root.gameObject.GetComponent<Health>();
+    }
+
+    void RefreshWeaponUI()
+    {
+        if(WeaponControlUI)
+        {
+            WeaponControlUI.UpdateWeaponAmmoUI(ammo, ammoStockpile);
+        }
     }
 }
