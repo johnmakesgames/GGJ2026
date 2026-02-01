@@ -21,7 +21,7 @@ public class PlayerPickupResponse : MonoBehaviour
                 playerStats.CurrentOxygen += pickupAmount;
                 break;
             case PickupTypes.Ammo:
-                Debug.LogWarning("No implementation for Ammmo pickup");
+                playerStats.AddAmmoToStockpile(pickupAmount * 5);
                 break;
             case PickupTypes.FullHeal:
                 playerStats.IncreaseMaxHealth(0, true);

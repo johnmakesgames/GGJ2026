@@ -27,6 +27,11 @@ public class WeaponController : MonoBehaviour
         return ammo;
     }
 
+    public void AddAmmoToStockpile(int ammo)
+    {
+        ammoStockpile += ammo;
+    }
+
     void Start()
     {
         shootAction = InputSystem.actions.FindAction("Attack");

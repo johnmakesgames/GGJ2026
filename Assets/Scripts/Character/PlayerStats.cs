@@ -116,6 +116,11 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void AddAmmoToStockpile(int amount)
+    {
+        weaponController.AddAmmoToStockpile(amount);
+    }
+
     private int peopleCured;
 
     [SerializeField]
