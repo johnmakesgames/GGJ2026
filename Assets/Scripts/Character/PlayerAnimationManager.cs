@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerAnimationManager : MonoBehaviour
 {
@@ -49,26 +50,29 @@ public class PlayerAnimationManager : MonoBehaviour
         
         if (attackAction.WasPerformedThisFrame() && timeSinceShot >= 0.25f && isPlayer)
         {
-            Vector2 mouseLocation = Mouse.current.position.ReadValue();
-            mouseLocation.x /= Screen.width;
-            mouseLocation.y /= Screen.height;
-
-            mouseLocation.x -= 0.5f;
-            mouseLocation.y -= 0.5f;
-
-            if (mouseLocation.x > 0)
+            if (SceneManager.GetActiveScene().name != "BaseScene")
             {
-                spriteRenderer.flipX = false;
-            }
-            else if (mouseLocation.x < 0)
-            {
-                spriteRenderer.flipX = true;
-            }
+                Vector2 mouseLocation = Mouse.current.position.ReadValue();
+                mouseLocation.x /= Screen.width;
+                mouseLocation.y /= Screen.height;
 
-            animator.SetFloat("MoveDirection", mouseLocation.y);
-            animator.SetBool("JustShot", true);
-            animator.SetTrigger("Shoot");
-            timeSinceShot = 0;
+                mouseLocation.x -= 0.5f;
+                mouseLocation.y -= 0.5f;
+
+                if (mouseLocation.x > 0)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                else if (mouseLocation.x < 0)
+                {
+                    spriteRenderer.flipX = true;
+                }
+
+                animator.SetFloat("MoveDirection", mouseLocation.y);
+                animator.SetBool("JustShot", true);
+                animator.SetTrigger("Shoot");
+                timeSinceShot = 0;
+            }
         }
     }
 
