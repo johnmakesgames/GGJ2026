@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySelector
   InventoryItemUIVisuals:
-  - {fileID: 6257880743292835524, guid: d781fa55a6b797a43a2c675350975aad, type: 3}
+  - {fileID: -823033627879922679, guid: 4a7da62f07623574b8ed419d0604c3d7, type: 3}
   - {fileID: 7032184553362833509, guid: 7be1c97e6519b98479b9adb261244dcd, type: 3}
   - {fileID: 906388131340123023, guid: 124daae1e35e0824484d6af42677246b, type: 3}
   - {fileID: -1911633405228054300, guid: 99d51e7cbb072de41a6ba718eb735b75, type: 3}
